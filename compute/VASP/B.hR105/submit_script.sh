@@ -1,0 +1,36 @@
+#!/bin/bash -l
+#SBATCH -p compute     			#specific partition
+#SBATCH -N 4 --ntasks-per-node=40   	#specific number of nodes and task per node
+#SBATCH -t 5:00:00      		#job time limit <hr:min:sec>
+#SBATCH -J vasp_bench			#job name
+ulimit  -s unlimited
+
+##Module Load##
+module purge 
+module load VASP   			#load VASP module
+
+WORKDIR=$SLURM_SUBMIT_DIR
+
+##Start time##
+START=`date`
+starttime=$(date +%s)
+
+##Run VASP###
+srun vasp_std 
+
+##Job Report##
+echo "####################JobID Report####################"
+echo "Job start at" $START
+echo "Job directory is" $WORKDIR
+END=`date`
+endtime=$(date +%s)
+echo "Job end   at" $END
+DIFF=$(( $endtime - $starttime ))
+convertsecs() {
+ ((h=${1}/3600))
+ ((m=(${1}%3600)/60))
+ ((s=${1}%60))
+ printf "%02d:%02d:%02d\n" $h $m $s
+}
+echo "The calculation time is $(convertsecs $DIFF) [$DIFF:s]"
+
