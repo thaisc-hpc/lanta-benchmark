@@ -8,7 +8,7 @@ Website : https://www.vasp.at/
 - No code modification is allowed
 - Calculation must be performed with double-precision accuracy
 - Use vasp_gam for gamma-point only systems. Otherwise, only vasp_std is allowed
-- The tester must supply corresponding VASP license in the test
+- The tester must responsible for their own VASP license used in the test
 
 ## Input
 
@@ -20,7 +20,7 @@ VASP benchmark consist of 4 input systems:
 - TiO2
 - ZrO2
 
-Each of the system represent various workload/algorithm that are common among VASP users. Hence, input files (POSCAR, KPOINTS) are now allowed to change. For INCAR, only NCORE and NSIM are allowed to change.
+Each of the system represent various workload/algorithm that are common among VASP users. Hence, input files (POSCAR, KPOINTS) are not allowed to change. For INCAR, only NCORE and NSIM are allowed to change.
 
 **Potentials (POTCAR)**
 
