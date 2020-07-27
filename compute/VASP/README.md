@@ -53,4 +53,10 @@ srun vasp_std
 Timing will be based on "LOOP+" of the first ionic iteration. The result extraction script (`get_result.sh`) is included within each input folders. 
 
 ## Performance 
-Use performance extraction script (`get_result.sh`) included in each testcase's folder to obtain performance results. See result in "benchmark_result.txt"
+Use performance extraction script (`get_result.sh`) included in each testcase's folder to obtain performance results. See result in `benchmark_result.txt`. For example, a result in `benchmark_result.txt` is 
+
+```
+Benchmark performance =    199.298 jobs/day 
+```
+
+Here, benchmark performance of 199.298 jobs/day will be used in a benchmark report.
