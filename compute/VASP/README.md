@@ -23,13 +23,12 @@ Each of the system represent various workload/algorithm that are common among VA
 POTCAR must be provided by the tester. based on `potpaw_PBE54` must be used. 
 
 
-
 **Summary**
 
-| Benchmark     | B.hR105       | Pt_111_252  |TiO2        |ZrO2        |
-| ------------- |:-------------:| -----------:|-----------:|-----------:|
+| Benchmark     | B.hR105  | Pt_111_252|TiO2      |ZrO2      |
+| ------------- |---------:| ---------:|---------:|---------:|
 | IONS          | 105      | 256       | 384      | 120      |
-| POTCAR        | PAW_PBE B 06Sep2000  | PAW_PBE Pt 04Feb2005 | PAW_PBE O 08Apr2002, Ti_sv 26Sep2005      |PAW_PBE Zr_sv 04Jan2005,  PAW_PBE O 08Apr2002 |
+| POTCAR        | B        | Pt        | O, Ti_sv | Zr_sv, O |
 | ENCUT (eV)    | 319      | 400       | 450      | 450      |
 | PREC.         | Normal   | Normal    | Accurate | Accurate |
 | ALGO          | Normal   | Very Fast | Fast     | Normal   |
