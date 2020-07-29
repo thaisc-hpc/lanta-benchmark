@@ -1,33 +1,36 @@
 SYSTEM = ZrO2_Surface
 
-ISTART = 0
-LWAVE  = F
-LCHARG = F
+ Global Settings
+   ISMEAR   = 0      # gaussian smearing
+   SIGMA    = 0.1    # broadening
+   LREAL    = A      # evaluate projection operators in real space 
+   ENCUT    = 450    # Energy cutoff
+   ISPIN    = 2      # Spin polarized calculation
+   ISYM     = 0
 
-#Electronic Relaxation
-PREC = Accurate
-ENCUT = 450
-NELM   = 10
-NELMDL = 3
-EDIFF  = 1E-07
-NBANDS = 680
+ Discretization
+   PREC     = Accurate # Accurate defaults
+   NBANDS   = 680  # For consistency
 
-#Ionic Relaxation
-NSW    = 0
-IBRION = 2
-ISIF   = 2
-ISYM   = 0
 
-#DOS related values:
-ISMEAR =  0
-SIGMA  =  0.1
+ Electronic Relaxation
+   ALGO   = Normal # Use Conjugate Gradient to allow HF-calcs
+   EDIFF  = 1E-07  # stopping-criterion for ELM
+   NELM   = 10     # maximum number of electronic SC steps
+   NELMDL = 3
 
-#Electronic Relaxation
-ALGO   = Normal
-LREAL  = A
-ISPIN  = 2
+ Ionic Relaxation
+   NSW    = 0    # maximum number of ionic steps 
+   ISIF   = 2    # calculate/relax/change everything
+   IBRION = 2    # ion update algorithm (2 = CG)
+   
 
-#Tunable parameters
-NCORE = 40
-NSIM = 4
+ Input/Output
+   ISTART = 0 # Start from scratch
+   LWAVE  = F # Don't store the WAVECAR
+   LCHARG = F # Don't store the CHGCAR
 
+ Tunable parameters
+   NCORE  = 40
+   NSIM   = 4
+   
