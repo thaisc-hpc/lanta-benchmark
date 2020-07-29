@@ -43,7 +43,7 @@ POTCAR must be provided by the tester. based on `potpaw_PBE54` must be used.
 
 **Number of nodes used**
 
-All of the testcases are expected to perform on 4 compute nodes (CPU-only).
+All of the testcases are expected to perform on 4 compute nodes (dual-socket CPU-only node).
 
 **Example (SLURM)**
 ```
