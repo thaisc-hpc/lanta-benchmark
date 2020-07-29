@@ -27,5 +27,5 @@ Information on GPU Node Benchmark will be added soon.
 
 ## Contacts
 
-Should you have inquiries regarding LANTA Benchmark, please contact mailto:thaisc@nstda.or.th
+Should you have inquiries regarding LANTA Benchmark, please contact [thaisc@nstda.or.th](mailto:thaisc@nstda.or.th)
 
