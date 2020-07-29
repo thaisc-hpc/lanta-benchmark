@@ -33,7 +33,7 @@ The sequnce was genereated using https://www.bioinformatics.org/sms2/random_dna.
 
 You can follow the information in https://mafft.cbrc.jp/alignment/software/manual/manual.html  
 
-The running option is fixed to mafft with --large --globalpair. Apart from -thread, the --maxiterate and others options are not allowed to be changed.
+The running option is fixed. mafft have to run with --large --globalpair. Apart from -thread, the --maxiterate and others options are not allowed to be changed.
 
 **Example (SLURM)**
 ```
