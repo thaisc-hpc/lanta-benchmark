@@ -232,27 +232,29 @@ HPL benchmark submission includes following files
 
 ### Benchmark Configuration Example
 
-| Items    | Description |
-|-------------------|--------------------|
-|System Manufacturer| |
-|System Model | |
-|Operating System | |
-|Processor Type | |
-|Processor Speed | |
-|Cores per chip | |
-|Processor per node | |
-|Memory per node | |
-|GPU | |
-|GPUs per node| |
-|Interconnect| |
-|Interconnect per node | |
-|Theoretical peak double-precision performance (per node)| |
-|Compiler | |
-|Compiler Flags | |
-|MPI library| |
-|BLAS library| |
-|FFT library| |
-|Other softwares| |
+Following is an example benchmark configuration for TARA compute node. 
+
+| Items                                                    | Description                     |
+|----------------------------------------------------------|---------------------------------|
+| System Manufacturer                                      | Lenovo                          |
+| System Model                                             | SR650                           |
+| Operating System                                         | CentOS 7.6                      |
+| Processor Type                                           | Intel Xeon Gold 6148            |
+| Processor Speed                                          | 2.4GHz                          |
+| Cores per chip                                           | 20                              |
+| Processor per node                                       | 2                               |
+| Memory per node                                          | 192GB                           |
+| GPU                                                      | -                               |
+| GPUs per node                                            | -                               |
+| Interconnect                                             | Mellanox Infiniband EDR 100Gbps |
+| Interconnect per node                                    | 1                               |
+| Theoretical peak double-precision performance (per node) | 3.072 TFlops                    |
+| Compiler                                                 | GCC 8.3.0                       |
+| Compiler Flags                                           | -O3                             |
+| MPI library                                              | OpenMPI 3.1.4                   |
+| BLAS library                                             | OpenBLAS 0.3.7                  |
+| FFT library                                              | -                               |
+| Other softwares                                          | -                               |
 
 
 
