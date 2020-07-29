@@ -4,20 +4,20 @@ Benchmark version : 2020.3
 Official document : http://manual.gromacs.org/documentation/
 
 ## Benchmark rules
+
+* GROMACS version 2020.3 **only**
 * No code modification is allowed
 
 ## Installation
+
 Installation guide : http://manual.gromacs.org/documentation/current/install-guide/index.html  
 Source code : http://manual.gromacs.org/documentation/2020.3/download.html
 
-**Example**
-```
-# Dependencies
-1) foss version 2019b
-2) CMake version 3.15
-3) Python version 3.7
+### Example
 
-# Download and install GROMACS
+#### Download and Install GROMACS
+
+``` bash
 wget ftp://ftp.gromacs.org/pub/gromacs/gromacs-2020.3.tar.gz
 tar xfz gromacs-2020.3.tar.gz
 cd gromacs-2020.3/
@@ -45,6 +45,7 @@ cmake \
 make -j 20
 make install
 ```
+
 It is compulsory to set the `-DGMX_DOUBLE` to `off`.  
 **If using external libraries, all external libraries must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.**  
 You may consider to change CMake options:  
@@ -52,39 +53,44 @@ You may consider to change CMake options:
 -DGMX_SIMD to specity the level of SIMD support enabled.
 
 ## Input files
-We use the test case-B (lignocellulose-rf) from UEABS benhmark (https://repository.prace-ri.eu/git/UEABS/ueabs/-/tree/master/).
+
+We use the test case-B (lignocellulose-rf) from [UEABS benhmark](https://repository.prace-ri.eu/git/UEABS/ueabs/-/tree/master/).
 
 ## Running GROMACS
-The test case is expected to perform on 4 compute nodes (dual-socket CPU-only node).  
-To execute GROMACS mdrun with 4 nodes, we specify the following details. 
-```
-#SBATCH -N 4
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=40
 
-srun $HOME/gromacs/2020.3/bin/gmx_mpi mdrun -s lignocellulose-rf.tpr -maxh 0.50 -resethway -noconfout -nsteps 10000 -g logile 
+The test case is expected to perform on **4 compute nodes** (dual-socket CPU-only node).  
+
+To execute GROMACS `mdrun` on 4 compute nodes with Slurm, following command can be used. 
+
+``` bash
+srun -N 4 --ntasks-per-node=1 --cpus-per-task=40 $HOME/gromacs/2020.3/bin/gmx_mpi mdrun -s lignocellulose-rf.tpr -maxh 0.50 -resethway -noconfout -nsteps 10000 -g logile 
 ```
 or
-```
+
+``` bash
 [mpirun execution] [path to GROMACS gmx_mpi] mdrun -s [input (.tpr)] [mdrun options]
 ```
+
 ### mdrun options
+
 official document : http://manual.gromacs.org/documentation/current/onlinehelp/gmx-mdrun.html  
+
 | options | description |
 |:--      |:--|
-|-s       | the input file (.tpr) (required)
-|-g       | output log file (required in this benchmark)
-|-maxh    | maximum wall itme to run job (job will terminate atfer 0.99\*this time (hours) 
-|-nsteps  | number of running steps (equal or greater than 10,000 steps in this benchmark)
-|-resethway | Reset timer counters at half steps. This make mdrun reports its performance based on the half of the simulation steps
-|-noconfout | instructs GROMACS not to write .xtc and .trr output file (coordinate and velocity) at the end of the simulation 
+|`-s`       | the input file (.tpr) (required)
+|`-g`       | output log file (required in this benchmark)
+|`-maxh`    | maximum wall itme to run job (job will terminate atfer 0.99\*this time (hours) 
+|`-nsteps`  | number of running steps (equal or greater than 10,000 steps in this benchmark)
+|`-resethway` | Reset timer counters at half steps. This make mdrun reports its performance based on the half of the simulation steps
+|`-noconfout` | instructs GROMACS not to write .xtc and .trr output file (coordinate and velocity) at the end of the simulation 
 
 You may consider to use the following options:
-* -dd and -npme to manually tune balance between forces and PME calculation. , you can use 
-* -resetstep [step] to reset timer counters at a given step, instead of using -resethway. However, we required at least 5,000 steps for the performance calulation.
-* -ntmpi to specify number of thread-MPI ranks 
-* -ntomp to specify Number of OpenMP threads per MPI rank
-The adjustment of -nstlist that specifies frequency to update the neighbor list is allowed unless there is no loss of the accuracy.
+* `-dd` and `-npme` to manually tune balance between forces and PME calculation. , you can use 
+* `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, we required at least 5,000 steps for the performance calulation.
+* `-ntmpi` to specify number of thread-MPI ranks 
+* `-ntomp` to specify Number of OpenMP threads per MPI rank
+
+The adjustment of `-nstlist` that specifies frequency to update the neighbor list is allowed unless there is no loss of the accuracy.
 
 ## Performance 
-GROMACS mdrun reports its performance in nanoseconds per day (ns/day). This is printed out on the screen at the end of the simulation or listed at the end of log file.
+GROMACS `mdrun` reports its performance in nanoseconds per day (ns/day). This is printed out on the screen at the end of the simulation or listed at the end of log file.
