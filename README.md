@@ -2,17 +2,17 @@
 
 LANTA Benchmark Suite is a set of applications for measuring performance of a HPC cluster. These set of applications represent workload expected to run on LANTA system. 
 
-##Computing System on LANTA:
+## Computing System on LANTA:
 
 *Compute Node:* dual-Socket x86_64 processors server
 *GPU Node:* An HPC server consists of 4 NVIDIA A100 GPU
 
 
-##Benchmark Structure
+## Benchmark Structure
 
 LANTA Benchmark Suite consists of two types: *Compute Node* and *GPU Node*
 
-###Compute Node Benchmark
+### Compute Node Benchmark
 
 4 Applications is included in the Compute Node Benchmark:
 - High-Performance Linpack (HPL)
@@ -20,12 +20,12 @@ LANTA Benchmark Suite consists of two types: *Compute Node* and *GPU Node*
 - VASP
 - MAFFT
 
-###GPU Node Benchmark
+### GPU Node Benchmark
 
 Information on GPU Node Benchmark will be added soon.
 
 
-##Contacts
+## Contacts
 
 Should you have inquiries regarding LANTA Benchmark, please contact mailto:thaisc@nstda.or.th
 
