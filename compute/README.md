@@ -9,4 +9,4 @@ The compute node benchmark consists of 4 applications as follows
 
 ## Example Performance Results 
 
-![Performance Result](example.jpeg)
+![Performance Result](example.png)
