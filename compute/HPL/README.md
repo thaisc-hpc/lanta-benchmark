@@ -56,7 +56,7 @@ This directory contains instructions (the files `README` and `INSTALL`) on how t
 
 ## Running HPL
 
-HPL benchmark is expected to run on **8 compute nodes**. An input file for HPL is `HPL.dat`. Following is an example input file.
+HPL benchmark is expected to run on **8 compute nodes**. An input file for HPL is `HPL.dat`. The explanation of each configuration can be read from `README.txt`. Following is an example input file.
 
 ```bash
 HPLinpack benchmark input file
@@ -90,47 +90,7 @@ HPL.out      output file name (if any)
 0            U  in (0=transposed,1=no-transposed) form
 1            Equilibration (0=no,1=yes)
 8            memory alignment in double (> 0)
-```
-
-The explanation of each configuration from `README.txt` is as follows
-
-``` bash
-   - Line 1: ignored 
-   - Line 2: ignored 
-   - Line 3: ignored 
-   - Line 4: ignored 
-   - Line 5: number of matrix sizes for HPL (and PTRANS) 
-   - Line 6: matrix sizes for HPL (and PTRANS) 
-   - Line 7: number of blocking factors for HPL (and PTRANS) 
-   - Line 8: blocking factors for HPL (and PTRANS) 
-   - Line 9: type of process ordering for HPL 
-   - Line 10: number of process grids for HPL (and PTRANS) 
-   - Line 11: numbers of process rows of each process grid for HPL (and
-   PTRANS) 
-   - Line 12: numbers of process columns of each process grid for HPL
-   (and PTRANS) 
-   - Line 13: threshold value not to be exceeded by scaled residual for
-   HPL (and PTRANS) 
-   - Line 14: number of panel factorization methods for HPL 
-   - Line 15: panel factorization methods for HPL 
-   - Line 16: number of recursive stopping criteria for HPL 
-   - Line 17: recursive stopping criteria for HPL 
-   - Line 18: number of recursion panel counts for HPL 
-   - Line 19: recursion panel counts for HPL 
-   - Line 20: number of recursive panel factorization methods for HPL 
-   - Line 21: recursive panel factorization methods for HPL 
-   - Line 22: number of broadcast methods for HPL 
-   - Line 23: broadcast methods for HPL 
-   - Line 24: number of look-ahead depths for HPL 
-   - Line 25: look-ahead depths for HPL 
-   - Line 26: swap methods for HPL 
-   - Line 27: swapping threshold for HPL 
-   - Line 28: form of L1 for HPL 
-   - Line 29: form of U for HPL 
-   - Line 30: value that specifies whether equilibration should be used
-   by HPL 
-   - Line 31: memory alignment for HPL 
-```
+``` 
 
 The exact way to run the HPL benchmark depends on the MPI implementation and system details. An example command to run the benchmark with 4 compute nodes on TARA is 
 
