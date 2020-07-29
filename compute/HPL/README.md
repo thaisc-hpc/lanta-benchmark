@@ -5,7 +5,7 @@
 
 ## Benchmark Rules
 
-HPL rule is based on a modified version of [HPCC baseline runs](https://icl.utk.edu/hpcc/overview/index.html) and [top500](https://www.top500.org/submit/). The rule is as follows
+HPL rule is based on a modified version of [HPCC rule](https://icl.utk.edu/hpcc/overview/index.html). Moreover, all HPL submissions must comply with [top500 rules](https://www.top500.org/submit/). The rule is as follows
 
 ### Optimization
 
@@ -22,18 +22,19 @@ Optimizations as described below are allowed.
   * Acceptable use of such libraries is subject to the following rules:
     * All libraries used shall be disclosed with the results submission. Each library shall be identified by library name, revision, and institution supplying the source code.
   * Libraries which are not generally available are not permitted. These libraries must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.
-  * Calls to library subroutines should have the same syntax and semantics as in the released benchmark code. Code modifications to accommodate various library call formats are not allowed.
+  * ~Calls to library subroutines should have the same syntax and semantics as in the released benchmark code. Code modifications to accommodate various library call formats are not allowed.~
 
 * Code Modification
   * Code modification to HPL source code are allowed as long as the modification is complied with [top500 rules](https://www.top500.org/submit/).
+  * No changes are allowed in the DGEMM testing harness and the substituted DGEMM routine (if any) should conform to BLAS definition.
 
-## Software Tools
+### Software Tools
 
 Any tools used to build and run the benchmark (including pre-processors, compilers, static and dynamic linkers, operating systems) must be generally available. 
 
 **These tools must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.**
 
-## Input File
+### Input File
 
 Input file `HPL.dat` can be edited for the target system.
 
@@ -55,7 +56,7 @@ This directory contains instructions (the files `README` and `INSTALL`) on how t
 
 ## Running HPL
 
-An input file for HPCC is `HPL.dat` in the top directory. A sample input file used for our reference run is as follows
+HPL benchmark is expected to run on **8 compute nodes**. An input file for HPL is `HPL.dat`. Following is an example input file.
 
 ```bash
 HPLinpack benchmark input file
@@ -91,7 +92,7 @@ HPL.out      output file name (if any)
 8            memory alignment in double (> 0)
 ```
 
-The explanation of each configuration from README.txt is as follows
+The explanation of each configuration from `README.txt` is as follows
 
 ``` bash
    - Line 1: ignored 
@@ -147,11 +148,113 @@ mpirun -np 160 ./hpl
 
 HPL will generate `HPL.out` at the end of its execution. This file contains the results of the HPL benchmark.
 
+### `HPL.out` Example
+
+``` bash
+================================================================================
+HPLinpack 2.3  --  High-Performance Linpack benchmark  --   December 2, 2018
+Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+================================================================================
+
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+
+The following parameter values will be used:
+
+N      :  100000 
+NB     :     192 
+PMAP   : Row-major process mapping
+P      :       8 
+Q      :      10 
+PFACT  :   Right 
+NBMIN  :       4 
+NDIV   :       2 
+RFACT  :   Crout 
+BCAST  :  1ringM 
+DEPTH  :       1 
+SWAP   : Mix (threshold = 64)
+L1     : transposed form
+U      : transposed form
+EQUIL  : yes
+ALIGN  : 8 double precision words
+
+--------------------------------------------------------------------------------
+
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+      ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+- The relative machine precision (eps) is taken to be               2.220446e-16
+- Computational tests pass if scaled residuals are less than                16.0
+
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR11C2R4      100000   192     8    10             194.35             3.4303e+03
+HPL_pdgesv() start time Fri Jul 24 19:58:59 2020
+
+HPL_pdgesv() end time   Fri Jul 24 20:02:13 2020
+
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=   9.03510675e-04 ...... PASSED
+================================================================================
+
+Finished      1 tests with the following results:
+              1 tests completed and passed residual checks,
+              0 tests completed and failed residual checks,
+              0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+
+End of Tests.
+================================================================================
+```
+
+## Performance Results
+
+Performance result is reported in the `Gflops` column of `HPL.out` file. We only accept performance result from a complete run that passes residual checl.  From the [example](#hplout-example), the performance result is 3.4303 TFlops. 
+
 ## Submission
 
 HPL benchmark submission includes following files
 
-* Benchmark configuration
+* Benchmark configuration. (See. [Benchmark Configuration](#Benchmark-Configuration-Example) )
+* HPL binary
 * A document describing all optiomizations and code modification.
 * HPL input file `HPL.dat`
 * HPL-generated output file `HPL.out`
+
+### Benchmark Configuration Example
+
+Following is an example benchmark configuration for TARA compute node. 
+
+| Items                                                    | Description                     |
+|----------------------------------------------------------|---------------------------------|
+| System Manufacturer                                      | Lenovo                          |
+| System Model                                             | SR650                           |
+| Operating System                                         | CentOS 7.6                      |
+| Processor Type                                           | Intel Xeon Gold 6148            |
+| Processor Speed                                          | 2.4GHz                          |
+| Cores per chip                                           | 20                              |
+| Processor per node                                       | 2                               |
+| Memory per node                                          | 192GB                           |
+| GPU                                                      | -                               |
+| GPUs per node                                            | -                               |
+| Interconnect                                             | Mellanox Infiniband EDR 100Gbps |
+| Interconnect per node                                    | 1                               |
+| Theoretical peak double-precision performance (per node) | 3.072 TFlops                    |
+| Compiler                                                 | GCC 8.3.0                       |
+| Compiler Flags                                           | -O3                             |
+| MPI library                                              | OpenMPI 3.1.4                   |
+| BLAS library                                             | OpenBLAS 0.3.7                  |
+| FFT library                                              | -                               |
+| Other softwares                                          | -                               |
+
+
+
