@@ -56,7 +56,7 @@ This directory contains instructions (the files `README` and `INSTALL`) on how t
 
 ## Running HPL
 
-An input file for HPCC is `HPL.dat` in the top directory. A sample input file used for our reference run is as follows
+HPL benchmark is expected to run on **8 compute nodes**. An input file for HPL is `HPL.dat`. Following is an example input file.
 
 ```bash
 HPLinpack benchmark input file
@@ -92,7 +92,7 @@ HPL.out      output file name (if any)
 8            memory alignment in double (> 0)
 ```
 
-The explanation of each configuration from README.txt is as follows
+The explanation of each configuration from `README.txt` is as follows
 
 ``` bash
    - Line 1: ignored 
@@ -148,7 +148,7 @@ mpirun -np 160 ./hpl
 
 HPL will generate `HPL.out` at the end of its execution. This file contains the results of the HPL benchmark.
 
-HPL.out Example
+### `HPL.out` Example
 
 ``` bash
 ================================================================================
@@ -220,7 +220,35 @@ End of Tests.
 
 HPL benchmark submission includes following files
 
-* Benchmark configuration
+* Benchmark configuration. (See. [Benchmark Configuration](#Benchmark-Configuration-Example) )
+* HPL binary
 * A document describing all optiomizations and code modification.
 * HPL input file `HPL.dat`
 * HPL-generated output file `HPL.out`
+
+### Benchmark Configuration Example
+
+| Items    | Description |
+|-------------------|--------------------|
+|System Manufacturer| |
+|System Model | |
+|Operating System | |
+|Processor Type | |
+|Processor Speed | |
+|Cores per chip | |
+|Processor per node | |
+|Memory per node | |
+|GPU | |
+|GPUs per node| |
+|Interconnect| |
+|Interconnect per node | |
+|Theoretical peak double-precision performance (per node)| |
+|Compiler | |
+|Compiler Flags | |
+|MPI library| |
+|BLAS library| |
+|FFT library| |
+|Other softwares| |
+
+
+
