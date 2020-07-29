@@ -16,7 +16,7 @@ Website : https://www.vasp.at/
 
 VASP benchmark consist of 4 input systems:
 - B.hR105
-- Pt_111_252
+- Pt_111
 - TiO2
 - ZrO2
 
@@ -29,7 +29,7 @@ POTCAR must be provided by the tester. based on `potpaw_PBE54` must be used.
 
 **Summary**
 
-| Benchmark     | B.hR105  | Pt_111_252|TiO2      |ZrO2      |
+| Benchmark     | B.hR105  | Pt_111    |TiO2      |ZrO2      |
 | ------------- |---------:| ---------:|---------:|---------:|
 | IONS          | 105      | 256       | 384      | 120      |
 | POTCAR        | B        | Pt        | O, Ti_sv | Zr_sv, O |
