@@ -1,18 +1,19 @@
 # VASP Benchmark
-Version : VASP.5.4.4.18APR17
-
-Website : https://www.vasp.at/
+**Version**: VASP.5.4.4.18APR17  
+**Website**: https://www.vasp.at/
 
 ## Benchmark rules
-- Only VASP version 5.4.4 with 18ARR17 patch is allowed
-- No code modification is allowed
-- Calculation must be performed with double-precision accuracy
-- Only vasp_std and vasp_gam is allowed (when applicable)
-- The tester must responsible for their own VASP license used in the test
+
+* Only VASP version **5.4.4 with 18ARR17 patch** is allowed
+* No code modification is allowed
+* Calculation must be performed with double-precision accuracy
+* Only `vasp_std` and `vasp_gam` are allowed (when applicable)
+* The tester is responsible for their own VASP license used in the test
+* Input files (`POSCAR` and `KPOINTS`) are not allowed to change. For `INCAR`, only `NCORE` and `NSIM` can be changed.
 
 ## Input
 
-**Input Systems**
+### Input Systems
 
 VASP benchmark consist of 4 input systems:
 - B.hR105
@@ -20,14 +21,14 @@ VASP benchmark consist of 4 input systems:
 - TiO2
 - ZrO2
 
-Each of the system represent various workload/algorithm that are common among VASP users. Hence, input files (POSCAR, KPOINTS) are not allowed to change. For INCAR, only NCORE and NSIM are allowed to change.
+Each of the system represent various workload/algorithm that are common among VASP users. Hence, input files (`POSCAR`, `KPOINTS`) are not allowed to change. For `INCAR`, only `NCORE` and `NSIM` can be changed.
 
-**Potentials (POTCAR)**
+### Potentials (POTCAR)
 
-POTCAR must be provided by the tester. based on `potpaw_PBE54` must be used. 
+`POTCAR` must be provided by the tester and `potpaw_PBE54` must be used. 
 
 
-**Summary**
+### Summary
 
 | Benchmark     | B.hR105  | Pt_111    |TiO2      |ZrO2      |
 | ------------- |---------:| ---------:|---------:|---------:|
@@ -41,26 +42,21 @@ POTCAR must be provided by the tester. based on `potpaw_PBE54` must be used.
 
 ## Running
 
-**Number of nodes used**
+### Number of nodes
 
-All of the testcases are expected to perform on 4 compute nodes (dual-socket CPU-only node).
+All of the testcases are expected to perform on **4 compute nodes** (dual-socket CPU-only node).
 
-**Example (SLURM)**
-```
-#!/bin/bash
-#SBATCH -p PARTITION                    # specific partition
-#SBATCH -N 4                            # specific number of nodes required
-#SBATCH --ntasks-per-node=40            # specific number of cores and task per node
+### Example (SLURM)
 
-# run the command
-srun vasp_std
-
+``` 
+srun -N 4 --ntasks-per-node=40 vasp_std
 ```
 
-Timing will be based on "LOOP+" of the first ionic iteration. The result extraction script (`get_result.sh`) is included within each input folder. 
+Timing will be based on `"LOOP+"` of the first ionic iteration. The result extraction script (`get_result.sh`) is included within each input folder. 
 
 ## Performance 
-Use performance extraction script (`get_result.sh`) included in each testcase's folder to obtain performance results. See result in `benchmark_result.txt`. For example, a result in `benchmark_result.txt` is 
+
+Use performance extraction script (`get_result.sh`) in each testcase's folder to obtain performance results. The script will generate `benchmark_result.txt` containing performance result. An example `benchmark_result.txt` is shown below
 
 ```
 Benchmark performance =    199.298 jobs/day 
