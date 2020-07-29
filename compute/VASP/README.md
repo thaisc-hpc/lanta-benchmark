@@ -32,7 +32,7 @@ POTCAR must be provided by the tester. based on `potpaw_PBE54` must be used.
 | Benchmark     | B.hR105  | Pt_111    |TiO2      |ZrO2      |
 | ------------- |---------:| ---------:|---------:|---------:|
 | IONS          | 105      | 256       | 384      | 120      |
-| POTCAR        | B        | Pt        | O, Ti_sv | Zr_sv, O |
+| POTCAR        | B        | Pt        | Ti_sv, O | Zr_sv, O |
 | ENCUT (eV)    | 319      | 400       | 450      | 450      |
 | PREC          | Normal   | Normal    | Accurate | Accurate |
 | ALGO          | Normal   | Very Fast | Fast     | Normal   |
