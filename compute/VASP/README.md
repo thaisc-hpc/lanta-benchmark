@@ -7,7 +7,7 @@ Website : https://www.vasp.at/
 - Only VASP version 5.4.4 with 18ARR17 patch is allowed
 - No code modification is allowed
 - Calculation must be performed with double-precision accuracy
-- Use vasp_gam for gamma-point only systems. Otherwise, only vasp_std is allowed
+- Only vasp_std and vasp_gam is allowed (when applicable)
 - The tester must responsible for their own VASP license used in the test
 
 ## Input
