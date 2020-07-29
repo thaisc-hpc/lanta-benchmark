@@ -41,6 +41,9 @@ POTCAR must be provided by the tester. based on `potpaw_PBE54` must be used.
 
 ## Running
 
+**Number of nodes used**
+
+All of the testcases are expected to perform on 4 compute nodes (CPU-only).
 
 **Example (SLURM)**
 ```
