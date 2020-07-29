@@ -106,9 +106,7 @@ mpirun -np 160 ./hpl
 
 `mpirun` is the command that starts execution of an MPI code. Depending on the system, it might also be `mpiexec`, or something appropriate for your computer.
 
-HPL will generate `HPL.out` at the end of its execution. This file contains the results of the HPL benchmark.
-
-### `HPL.out` Example
+HPL will generate `HPL.out` at the end of its execution. This file contains the results of the HPL benchmark. An example `HPL.out` is shown below.
 
 ``` bash
 ================================================================================
@@ -178,7 +176,7 @@ End of Tests.
 
 ## Performance Results
 
-Performance result is reported in the `Gflops` column of `HPL.out` file. We only accept performance result from a complete run that passes residual checl.  From the [example](#hplout-example), the performance result is 3.4303 TFlops. 
+Performance result is reported in the `Gflops` column of `HPL.out` file. We only accept performance result from a complete run that passes residual check.
 
 ## Submission
 
