@@ -216,6 +216,10 @@ End of Tests.
 ================================================================================
 ```
 
+## Performance Results
+
+Performance result is reported in the `Gflops` column of `HPL.out` file. We only accept performance result from a complete run that passes residual checl.  From the [example](#HPL.out-Example), the performance result is 3.4303 TFlops. 
+
 ## Submission
 
 HPL benchmark submission includes following files
