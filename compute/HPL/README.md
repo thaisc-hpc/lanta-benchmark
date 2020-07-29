@@ -5,7 +5,7 @@
 
 ## Benchmark Rules
 
-HPL rule is based on a modified version of [HPCC rule](https://icl.utk.edu/hpcc/overview/index.html) and [top500](https://www.top500.org/submit/). The rule is as follows
+HPL rule is based on a modified version of [HPCC rule](https://icl.utk.edu/hpcc/overview/index.html). Moreover, all HPL submissions must comply with [top500 rules](https://www.top500.org/submit/). The rule is as follows
 
 ### Optimization
 
@@ -28,13 +28,13 @@ Optimizations as described below are allowed.
   * Code modification to HPL source code are allowed as long as the modification is complied with [top500 rules](https://www.top500.org/submit/).
   * No changes are allowed in the DGEMM testing harness and the substituted DGEMM routine (if any) should conform to BLAS definition.
 
-## Software Tools
+### Software Tools
 
 Any tools used to build and run the benchmark (including pre-processors, compilers, static and dynamic linkers, operating systems) must be generally available. 
 
 **These tools must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.**
 
-## Input File
+### Input File
 
 Input file `HPL.dat` can be edited for the target system.
 
@@ -218,7 +218,7 @@ End of Tests.
 
 ## Performance Results
 
-Performance result is reported in the `Gflops` column of `HPL.out` file. We only accept performance result from a complete run that passes residual checl.  From the [example](#HPL.out-Example), the performance result is 3.4303 TFlops. 
+Performance result is reported in the `Gflops` column of `HPL.out` file. We only accept performance result from a complete run that passes residual checl.  From the [example](#hplout-example), the performance result is 3.4303 TFlops. 
 
 ## Submission
 
