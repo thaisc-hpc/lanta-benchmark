@@ -22,7 +22,6 @@ Optimizations as described below are allowed.
   * Acceptable use of such libraries is subject to the following rules:
     * All libraries used shall be disclosed with the results submission. Each library shall be identified by library name, revision, and institution supplying the source code.
   * Libraries which are not generally available are not permitted. These libraries must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.
-  * ~Calls to library subroutines should have the same syntax and semantics as in the released benchmark code. Code modifications to accommodate various library call formats are not allowed.~
 
 * Code Modification
   * Code modification to HPL source code are allowed as long as the modification is complied with [top500 rules](https://www.top500.org/submit/).
@@ -69,7 +68,7 @@ HPL.out      output file name (if any)
 192          NBs
 0            PMAP process mapping (0=Row-,1=Column-major)
 1            # of process grids (P x Q)
-8            Ps
+16            Ps
 20           Qs
 16.0         threshold
 1            # of panel fact
@@ -92,16 +91,16 @@ HPL.out      output file name (if any)
 8            memory alignment in double (> 0)
 ``` 
 
-The exact way to run the HPL benchmark depends on the MPI implementation and system details. An example command to run the benchmark with 4 compute nodes on TARA is 
+The exact way to run the HPL benchmark depends on the MPI implementation and system details. An example command to run the benchmark with 8 compute nodes on TARA is 
 
 ``` bash
-srun -N 4 -n 160 ./hpl
+srun -N 8 -n 320 ./hpl
 ```
 
 Other possible command is 
 
 ``` bash
-mpirun -np 160 ./hpl
+mpirun -np 320 ./hpl
 ```
 
 `mpirun` is the command that starts execution of an MPI code. Depending on the system, it might also be `mpiexec`, or something appropriate for your computer.
