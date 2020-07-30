@@ -7,8 +7,8 @@ LANTA Benchmark Suite is a set of applications for measuring performance of a HP
 
 ## Computing System on LANTA:
 
-**Compute Node**: A dual-Socket x86_64 processors server  
-**GPU Node**: An x86 server with 4 NVIDIA A100 GPUs
+**Compute Node**: Dual-socket x86 server  
+**GPU Node**: x86 server with 4 NVIDIA A100 GPUs
 
 
 ## Benchmark Structure
