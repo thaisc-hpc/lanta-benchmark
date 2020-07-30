@@ -31,27 +31,21 @@ The sequnce was genereated using https://www.bioinformatics.org/sms2/random_dna.
 
 ## Running
 
-You can follow the information in https://mafft.cbrc.jp/alignment/software/manual/manual.html  
+MAFFT benchmark runs on a single compute node **without MPI**. You can follow the information in https://mafft.cbrc.jp/alignment/software/manual/manual.html  
 
-For this benchmark, the running option is fixed. The MAFFT have to run with --globalpair which specifies Needleman-Wunsch algorithm. Apart from --thread, --threadtb, and --threadit, the others options are **NOT** allowed to be changed.  
+The MAFFT must run with `--globalpair` which specifies Needleman-Wunsch algorithm. Only `--thread`, `--threadtb`, and `--threadit` options are allowed to change.  
+
 The information about MAFFT multithreads is available at https://mafft.cbrc.jp/alignment/software/multithreading.html .
 
-**Example (SLURM)**
-```
-#!/bin/bash
-#SBATCH -p PARTITION                    # specific partition
-#SBATCH -N 1                            # specific number of nodes required
-#SBATCH --cpus-per-task=40 --ntasks-per-node=1    # specific number of cores and task per node
-
-# run the command
-time $HOME/mafft7.4-foss/bin/mafft  --globalpair --thread 40 --threadtb 20 --threadit 20 INPUT.fa > OUTPUT.out
+### Example
 
 ```
-Note that we add `time` to measure MAFFT performance.  
+mafft  --globalpair --thread 40 --threadtb 20 --threadit 20 INPUT.fa > OUTPUT.out
+```
 
 ## Performance 
-MAFFT itself does not report a performance. We use either `time` or the information from SLURM to get the performance. Alternatively, you can use 
-`run_and_get_performace_MAFFT.sh` to obtain performance results. The script will generate `benchmark_result.txt` containing performance result. An example benchmark_result.txt is shown below
+
+MAFFT does not report a performance. Use `run_and_get_performace_MAFFT.sh` to obtain performance results. The script will generate `benchmark_result.txt` containing performance result. An example benchmark_result.txt is shown below
 
 ``` bash
 Benchmark performance =    65.455 jobs/day 
