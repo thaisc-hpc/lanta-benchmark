@@ -1,6 +1,9 @@
 # LANTA Benchmark Suite
 
-LANTA Benchmark Suite is a set of applications for measuring performance of a HPC cluster. These set of applications represent workload expected to run on LANTA system. 
+LANTA Benchmark Suite is a set of applications for measuring performance of a HPC cluster. These set of applications represent workload for ThaiSC users. LANTA Benchmark Suite is expected to be used in part for performance evaluation of the new LANTA cluster.
+
+**Disclaimer: This is not the final release version of the LANTA Benchmark Suite. Some of the content may change** 
+
 
 ## Computing System on LANTA:
 
@@ -22,7 +25,7 @@ LANTA Benchmark Suite consists of two types: *Compute Node* and *GPU Node*
 
 ### GPU Node Benchmark
 
-Information on GPU Node Benchmark will be added soon.
+TBA
 
 
 ## Contacts
