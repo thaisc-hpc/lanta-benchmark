@@ -33,7 +33,8 @@ The sequnce was genereated using https://www.bioinformatics.org/sms2/random_dna.
 
 You can follow the information in https://mafft.cbrc.jp/alignment/software/manual/manual.html  
 
-The running option is fixed. mafft have to run with --large --globalpair. Apart from -thread, the --maxiterate and others options are not allowed to be changed.
+For this benchmark, the running option is fixed. The MAFFT have to run with --globalpair which specifies Needleman-Wunsch algorithm. Apart from --thread, --threadtb, and --threadit, the others options are **NOT** allowed to be changed.  
+The information about MAFFT multithreads is available at https://mafft.cbrc.jp/alignment/software/multithreading.html .
 
 **Example (SLURM)**
 ```
@@ -42,15 +43,13 @@ The running option is fixed. mafft have to run with --large --globalpair. Apart 
 #SBATCH -N 1                            # specific number of nodes required
 #SBATCH --cpus-per-task=40 --ntasks-per-node=1    # specific number of cores and task per node
 
-# set enviroment variable according to https://mafft.cbrc.jp/alignment/software/mpi.html
-export MAFFT_TMPDIR=$SLURM_TMPDIR   # Set to $scratch if run > 1 nodes
-
 # run the command
-time $HOME/mafft7.4-foss/bin/mafft --large --globalpair --thread 40 INPUT.fa > OUTPUT.out
+time $HOME/mafft7.4-foss/bin/mafft  --globalpair --thread 40 INPUT.fa > OUTPUT.out
 
 ```
 We add `time` to measure MAFFT performance.  
 Note: MAFFT_TMPDIR is to set the temporary directory which must be shared by all hosts. 
 
 ## Performance 
-MAFFT itself does not report a performance. We use either `time` or the information from SLURM to get the performance.
+MAFFT itself does not report a performance. We use either `time` or the information from SLURM to get the performance. Alternatively, you can use 
+'run_and_get_performace_MAFFT.sh' to obtain performance results. The script will generate benchmark_result.txt containing performance result.
