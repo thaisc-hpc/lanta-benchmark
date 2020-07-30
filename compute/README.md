@@ -10,7 +10,7 @@ The compute node benchmark consists of 4 applications as follows
 | MAFFT         | 1        | 1         | 
 
 
-For detail instruction for each benchmark, see README.md file in each folder.
+For detail instruction for each benchmark, see `README.md` file in each folder.
 
 ## Example Performance Results 
 
