@@ -51,4 +51,8 @@ Note that we add `time` to measure MAFFT performance.
 
 ## Performance 
 MAFFT itself does not report a performance. We use either `time` or the information from SLURM to get the performance. Alternatively, you can use 
-`run_and_get_performace_MAFFT.sh` to obtain performance results. The script will generate `benchmark_result.txt` containing performance result.
+`run_and_get_performace_MAFFT.sh` to obtain performance results. The script will generate `benchmark_result.txt` containing performance result. An example benchmark_result.txt is shown below
+
+``` bash
+Benchmark performance =    65.455 jobs/day 
+```
