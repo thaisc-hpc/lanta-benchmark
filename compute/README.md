@@ -10,12 +10,7 @@ The compute node benchmark consists of 4 applications as follows
 | MAFFT         | 1        | 1         | 
 
 
-* High-Performance Linpack (HPL)
-* GROMACS
-* VASP
-* MAFFT
-
-For detail instruction, see README.md file in each benchmark folder.
+For detail instruction for each benchmark, see README.md file in each folder.
 
 ## Example Performance Results 
 
