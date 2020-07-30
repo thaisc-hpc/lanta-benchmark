@@ -54,7 +54,7 @@ You may consider to change CMake options:
 
 ## Input files
 
-We use the test case-B (lignocellulose-rf) from [UEABS benhmark](https://repository.prace-ri.eu/git/UEABS/ueabs/-/tree/master/). The input can be download [here](https://sharebox.nstda.or.th/d/3fdb161c).  
+We use the test case-B (lignocellulose-rf) from [UEABS benhmark](https://repository.prace-ri.eu/git/UEABS/ueabs/-/tree/master/). The input files can be downloaded [here](https://sharebox.nstda.or.th/d/3fdb161c).  
 
 ## Running GROMACS
 
