@@ -124,7 +124,7 @@ export GMX_FORCE_UPDATE_DEFAULT_GPU=true
 
 $HOME/gromacs/2020.3-GPU/bin/gmx mdrun -s stmv.tpr -maxh 0.50 -resethway -noconfout -nsteps 10000 -g logile -nb gpu -bonded gpu -pme gpu -ntmpi 4 -ntomp 10 -npme 1 -nstlist 80 
 
-``
+```
 
 see [NVIDIA Developer Blog](https://developer.nvidia.com/blog/creating-faster-molecular-dynamics-simulations-with-gromacs-2020/) for the explanation.
 
