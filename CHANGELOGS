@@ -1,0 +1,15 @@
+This file describes changes in Lanta Benchmark. It primarily documents those 
+changes that are of interest to vendors and administrators.
+
+* Changes in v0.6
+==============================
+  -- Add HPL benchmark instruction for GPU node
+  -- Add GROMACS benchmark instruction for GPU node
+  
+* Changes in v0.5
+==============================
+  -- Initial draft
+  -- Add HPL benchmark instruction for compute node
+  -- Add VASP benchmark instruction for compute node
+  -- Add GROMACS benchmark instruction for compute node
+  -- Add MAFFT benchmark instruction for compute node
