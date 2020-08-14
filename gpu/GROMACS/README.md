@@ -93,7 +93,7 @@ You may consider to change CMake options:
 
 In the traditional case, we use the Satellite tobacco mosaic virus (STMV) system and the test case-B (lignocellulose-rf) from [UEABS benhmark](https://repository.prace-ri.eu/git/UEABS/ueabs/-/tree/master/).   
 
-In the GPU Optimization case, we only use the Satellite tobacco mosaic virus (STMV) system.  
+In the GPU Optimization case, we only use the STMV system.  
 
 The input files can be downloaded here [lignocellulose-rf](https://sharebox.nstda.or.th/d/d94385bd) and [stmv](https://sharebox.nstda.or.th/d/b16a7e96).  
 
