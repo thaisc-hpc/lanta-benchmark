@@ -37,25 +37,9 @@ Any tools used to build and run the benchmark (including pre-processors, compile
 
 Input file `HPL.dat` can be edited for the target system.
 
-## Getting HPL
-
-HPL source code can be downloaded from https://www.netlib.org/benchmark/hpl/. We recommend the latest version (2.3) for this evaluation.
-
-## Building HPL
-
-Extract HPL source code
-
-``` bash
-tar -xvzf hpl-2.3.tar.gz
-```
-
-This will create a `hpl-2.3` directory containing all of HPL source files. We will refer to this directory as the top directory.
-
-This directory contains instructions (the files `README` and `INSTALL`) on how to build HPL on your system. The `setup` directory contains many examples of build script files.  
-
 ## Running HPL
 
-HPL benchmark is expected to run on **8 compute nodes**. An input file for HPL is `HPL.dat`. The explanation of each configuration can be read from `README.txt`. Following is an example input file.
+HPL benchmark is expected to run on **8 GPU nodes**, each is configured with 4 Nvidia A100 GPUs. An input file for HPL is `HPL.dat`. The explanation of each configuration can be read from `README.txt`. Following is an example input file.
 
 ```bash
 HPLinpack benchmark input file
@@ -91,19 +75,7 @@ HPL.out      output file name (if any)
 8            memory alignment in double (> 0)
 ``` 
 
-The exact way to run the HPL benchmark depends on the MPI implementation and system details. An example command to run the benchmark with 8 compute nodes on TARA is 
-
-``` bash
-srun -N 8 -n 320 ./hpl
-```
-
-Other possible command is 
-
-``` bash
-mpirun -np 320 ./hpl
-```
-
-`mpirun` is the command that starts execution of an MPI code. Depending on the system, it might also be `mpiexec`, or something appropriate for your computer.
+The exact way to run the HPL benchmark depends on the MPI implementation and system details. 
 
 HPL will generate `HPL.out` at the end of its execution. This file contains the results of the HPL benchmark. An example `HPL.out` is shown below.
 
@@ -189,7 +161,7 @@ HPL benchmark submission includes following files
 
 ### Benchmark Configuration Example
 
-Following is an example benchmark configuration for TARA compute node. 
+Following is an example benchmark configuration for TARA GPU node. 
 
 | Items                                                    | Description                     |
 |----------------------------------------------------------|---------------------------------|
@@ -200,18 +172,18 @@ Following is an example benchmark configuration for TARA compute node.
 | Processor Speed                                          | 2.4GHz                          |
 | Cores per chip                                           | 20                              |
 | Processor per node                                       | 2                               |
-| Memory per node                                          | 192GB                           |
-| GPU                                                      | -                               |
-| GPUs per node                                            | -                               |
+| Memory per node                                          | 384GB                           |
+| GPU                                                      | Nvidia Tesla V100 PCIe 16 GB    |
+| GPUs per node                                            | 2                               |
 | Interconnect                                             | Mellanox Infiniband EDR 100Gbps |
 | Interconnect per node                                    | 1                               |
-| Theoretical peak double-precision performance (per node) | 3.072 TFlops                    |
+| Theoretical peak double-precision performance (per node) | 14.0 TFlops                     |
 | Compiler                                                 | GCC 8.3.0                       |
 | Compiler Flags                                           | -O3                             |
 | MPI library                                              | OpenMPI 3.1.4                   |
 | BLAS library                                             | OpenBLAS 0.3.7                  |
 | FFT library                                              | -                               |
-| Other softwares                                          | -                               |
+| Other softwares                                          | CUDA 10.1                       |
 
 
 
