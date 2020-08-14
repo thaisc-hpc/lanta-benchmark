@@ -6,9 +6,8 @@ The GPU node benchmark consists of 5 applications as follows
 | ------------- |---------:| ---------:|
 | HPL           | 8        | 1         | 
 | GROMACS       | 4        | 3         | 
-| CHEM (TBD)    | TBD      | TBD       | 
 | ML-1 (TBD)    | TBD      | TBD       | 
-| ML-2 (TBD)    | TBD      | TBD       | 
 
+**ADDITIONAL BENCHMARKS MAY BE ADDED LATER**
 
 For detail instruction for each benchmark, see `README.md` file in each folder.
