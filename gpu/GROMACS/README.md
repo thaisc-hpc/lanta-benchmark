@@ -95,13 +95,13 @@ In the traditional case, we use the Satellite tobacco mosaic virus (STMV) system
 
 In the GPU Optimization case, we only use the STMV system.  
 
-The input files can be downloaded here [lignocellulose-rf](https://sharebox.nstda.or.th/d/d94385bd) and [stmv](https://sharebox.nstda.or.th/d/b16a7e96).  
+The input files can be downloaded here: [lignocellulose-rf](https://sharebox.nstda.or.th/d/d94385bd) and [stmv](https://sharebox.nstda.or.th/d/b16a7e96).  
 
 ## Running GROMACS
 
-1. The traditional test case is expected to perform on **4 gpu nodes**.  
+1.The traditional test case is expected to perform on **4 gpu nodes**.  
 
-To execute GROMACS `mdrun` on 4 gpu nodes with 4 GPUs per node using Slurm, the following command can be used. 
+To execute GROMACS `mdrun` on 4 gpu nodes (4 GPUs and 40 CPUs per node) with Slurm, the following command can be used. 
 
 ``` bash
 srun -N 4 --ntasks-per-node=4 --cpus-per-task=10 $HOME/gromacs/2020.3-MPI/bin/gmx_mpi mdrun -s lignocellulose-rf.tpr -maxh 0.50 -resethway -noconfout -nsteps 10000 -g logile -ntomp 10
@@ -112,7 +112,7 @@ or
 [mpirun execution] [path to GROMACS gmx_mpi] mdrun -s [input (.tpr)] [mdrun options]
 ```
 
-2. The GPU Optimization test case is expected to perform on a **1 gpu node**.  
+2.The GPU Optimization test case is expected to perform on a **1 gpu node**.  
 
 To enable all gpu implementations, we execute GROMACS `mdrun` using the following set of commands.
 
