@@ -37,9 +37,24 @@ Please refer to NVIDIA instruction ([README](https://github.com/mlperf/training_
 
 ### Running with Slurm and Singularity
 
-Another approach is to run training with Slurm and Singularity. Following is our Slurm submission script for running on TARA cluster.
+Another approach is to run training with Slurm and Singularity. 
 
-```bash
+Assuming that you already download COCO dataset and required weight. 
+First, build singularity image from NGC using following command.
+
+``` bash
+singularity build pytorch20.06-ngc.sif docker://nvcr.io/nvidia/pytorch:20.06-py3
+```
+
+Then, build maskrnn with following command 
+
+``` bash
+singularity exec --nv pytorch20.06-ngc.sif python setup.py build develop
+```
+
+Following is our Slurm submission script for running on TARA cluster.
+
+``` bash
 #!/bin/bash
 
 REPO_PATH=/path/to/mlperf/training_results_v0.7/NVIDIA/benchmarks/maskrcnn/implementations/pytorch
@@ -79,7 +94,3 @@ Note that `EXTRA_PARAMS` and `EXTRA_CONFIG` is set by `config_DGX1.sh`.
   git clone https://github.com/mlperf/logging.git mlperf-logging
   pip install -e mlperf-logging
   ```
-
-
-
-
