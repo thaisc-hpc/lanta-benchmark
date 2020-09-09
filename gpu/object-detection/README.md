@@ -9,7 +9,7 @@ This benchmark uses [MLPerf closed division rule](https://github.com/mlperf/trai
 
 The model and dataset used for this benchmark is specified in `Object detection (heavy weight)`. 
 
-Reference implementation and instruction can be found [here](https://github.com/mlperf/training/tree/master/object_detection).
+For this benchmark, we will use NVIDIA implementation of maskrcnn from MLPerf training v0.7 submission as the reference implementation, which can be found [here](https://github.com/mlperf/training_results_v0.7/tree/master/NVIDIA/benchmarks/maskrcnn/implementations/pytorch). 
 
 ### Dataset
 
@@ -29,4 +29,5 @@ Any tools used to build and run the benchmark (including pre-processors, compile
 ## Running Benchmark
 
 The benchmark is expected to run on **4 GPU nodes**.
+
 
