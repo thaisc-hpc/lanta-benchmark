@@ -1,7 +1,8 @@
 # Object Detection Benchmark
 
 **Website**: https://mlperf.org/  
-**Version**: v0.7
+**Version**: v0.7  
+**Reference Implementation**: https://github.com/mlperf/training_results_v0.7/tree/master/NVIDIA/benchmarks/maskrcnn/implementations/pytorch  
 
 ## Benchmark Rules
 
@@ -9,7 +10,7 @@ This benchmark uses [MLPerf closed division rule](https://github.com/mlperf/trai
 
 The model and dataset used for this benchmark is specified in `Object detection (heavy weight)`. 
 
-For this benchmark, we will use NVIDIA implementation of maskrcnn from MLPerf training v0.7 submission as the reference implementation, which can be found [here](https://github.com/mlperf/training_results_v0.7/tree/master/NVIDIA/benchmarks/maskrcnn/implementations/pytorch). 
+For this benchmark, we will use **NVIDIA implementation of Mask R-CNN from MLPerf training v0.7 submission** as the reference implementation. The code can be found in MLPerf training v0.7 submission [here](https://github.com/mlperf/training_results_v0.7/tree/master/NVIDIA/benchmarks/maskrcnn/implementations/pytorch).
 
 ### Dataset
 
