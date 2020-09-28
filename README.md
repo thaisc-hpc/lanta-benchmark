@@ -25,11 +25,12 @@ Lanta Benchmark Suite consists of two types: *Compute Node* and *GPU Node*
 
 ### GPU Node Benchmark
 
-3 Applications are included in the GPU Node Benchmark.  
+4 Applications are included in the GPU Node Benchmark.  
 **ADDITIONAL BENCHMARKS MAY BE ADDED LATER**:
 
 - High-Performance Linpack (HPL)
 - GROMACS
+- VASP
 - Machine Learning (TBD)
 
 ## Contacts
