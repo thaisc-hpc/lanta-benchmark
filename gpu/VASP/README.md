@@ -37,7 +37,7 @@ Each of the system represent various workload/algorithm that are common among VA
 | ENCUT (eV)    | 319      |  450      |
 | PREC          | Normal   |  Accurate |
 | ALGO          | Normal   |  Normal   |
-| NELM (NELMDL) | 6 (5)    |  10 (3)   |
+| NELM (NELMDL) | 30 (5)   |  50 (5)   |
 | KPOINTS       | 2 2 2    |  3 3 1    |
 
 ## Running
