@@ -1,4 +1,4 @@
-SYSTEM = ZrO2_Surface
+SYSTEM = TiO2_Surface
 
 ISTART = 0
 LWAVE  = F
@@ -7,9 +7,9 @@ LCHARG = F
 #Electronic Relaxation
 PREC = Accurate
 ENCUT = 450
-NELM   = 10
-NELMDL = 3
-EDIFF  = 1E-07
+NELM   = 30
+NELMDL = 5
+EDIFF  = 1E-10
 
 #Ionic Relaxation
 NSW    = 0
