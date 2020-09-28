@@ -44,12 +44,12 @@ Each of the system represent various workload/algorithm that are common among VA
 
 ### Number of nodes
 
-All of the testcases are expected to perform on **1 gpu node with 4 NVIDIA 100 GPUs**.
+All of the testcases are expected to perform on **2 gpu nodes with 4 NVIDIA 100 GPUs on each server**.
 
 ### Example (SLURM)
 
 ``` 
-srun -N 1 --ntasks-per-node=4 vasp_std
+srun -N 2 --ntasks-per-node=4 vasp_std
 ```
 
 Timing will be based on `"LOOP+"` of the first ionic iteration. The result extraction script (`get_result.sh`) is included within each input folder. 
