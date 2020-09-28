@@ -1,5 +1,5 @@
 # VASP Benchmark
-**Version**: VASP.5.4.4.18APR17  
+**Version**: VASP.6.1.1 19Jun20  
 **Website**: https://www.vasp.at/
 
 ## Benchmark rules
