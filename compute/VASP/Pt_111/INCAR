@@ -10,10 +10,10 @@ System = Pt111-Surface
    PREC     = Normal # Normal defaults
 
  Electronic Relaxation
-   ALGO   = Very Fast # Use Congugate Gradient to allow HF-calcs
-   NELM   = 25     # maximum number of electronic SC steps
+   ALGO   = Fast # Use Congugate Gradient to allow HF-calcs
+   NELM   = 30     # maximum number of electronic SC steps
    NELMDL = 5 
-   EDIFF  = 1E-07  # stopping-criterion for ELM
+   EDIFF  = 1E-10  # stopping-criterion for ELM
 
  Ionic Relaxation
    NSW    = 0    # maximum number of ionic steps

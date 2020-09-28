@@ -1,10 +1,10 @@
 # VASP Benchmark
-**Version**: VASP.5.4.4.18APR17  
+**Version**: VASP.5.4.4.18APR17 **or** VASP 6.1.1.19JUN20 
 **Website**: https://www.vasp.at/
 
 ## Benchmark rules
 
-* Only VASP version **5.4.4 with 18ARR17 patch** is allowed
+* Only VASP versions **5.4.4 with 18ARR17 patch** or **6.1.1 19Jun20** is allowed
 * No code modification is allowed
 * Calculation must be performed with double-precision accuracy
 * Only `vasp_std` and `vasp_gam` are allowed (when applicable)
@@ -36,8 +36,8 @@ Each of the system represent various workload/algorithm that are common among VA
 | POTCAR        | B        | Pt        | Ti_sv, O | Zr_sv, O |
 | ENCUT (eV)    | 319      | 400       | 450      | 450      |
 | PREC          | Normal   | Normal    | Accurate | Accurate |
-| ALGO          | Normal   | Very Fast | Fast     | Normal   |
-| NELM (NELMDL) | 6 (5)    | 25 (5)    | 10 (3)   | 10 (3)   |
+| ALGO          | Normal   | Fast      | Fast     | Normal   |
+| NELM (NELMDL) | 30 (5)   | 30 (5)    | 30 (5)   | 50 (5)   |
 | KPOINTS       | 2 2 2    | 2 2 1     | 1 1 1    | 3 3 1    |
 
 ## Running

@@ -16,9 +16,9 @@ SYSTEM = B.hR105 with PBE0/HSE06
 
  Electronic Relaxation
    ALGO   = Normal # Use Conjugate Gradient to allow HF-calcs
-   EDIFF  = 1E-06  # stopping-criterion for ELM
-   NELM     = 6      # maximum number of electronic SC steps
-
+   EDIFF  = 1E-10  # stopping-criterion for ELM
+   NELM   = 30     # maximum number of electronic SC steps
+   NELMDL = 5
  Ionic Relaxation
    NSW    = 1    # maximum number of ionic steps 
    ISIF   = 2    # calculate/relax/change everything
