@@ -17,7 +17,7 @@
 
 ### Input Systems
 
-VASP benchmark consist of 4 input systems:
+VASP benchmark consist of 2 input systems:
 - B.hR105
 - ZrO2
 
