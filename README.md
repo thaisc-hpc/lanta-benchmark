@@ -31,7 +31,8 @@ Lanta Benchmark Suite consists of two types: *Compute Node* and *GPU Node*
 - High-Performance Linpack (HPL)
 - GROMACS
 - VASP
-- Machine Learning (TBD)
+- Object Detection
+- Reinforcement Learning
 
 ## Contacts
 
