@@ -4,10 +4,11 @@ The GPU node benchmark consists of 4 applications as follows
 
 | Benchmark     | PoC Nodes| Number of  testcases |
 | ------------- |---------:| ---------:|
-| HPL           | 8        | 1         | 
+| HPL           | 4        | 1         | 
 | GROMACS       | 4        | 3         | 
 | VASP          | 2        | 2         | 
-| ML-1 (TBD)    | TBD      | TBD       | 
+| Object Detection    | 4      | 1       | 
+| Reinforcement Learning    | 4      | 1       | 
 
 **ADDITIONAL BENCHMARKS MAY BE ADDED LATER**
 
