@@ -1,6 +1,14 @@
 This file describes changes in Lanta Benchmark. It primarily documents those 
 changes that are of interest to vendors and administrators.
 
+* Changes in v0.7
+==============================
+  -- Update VASP compute testcases
+  -- Update VASP to 6.1.0
+  -- Add VASP benchmark instruction for GPU node
+  -- Add object detection benchmark instruction for GPU node
+  -- Add reinforcement learning benchmark instruction for GPU node
+
 * Changes in v0.6
 ==============================
   -- Add HPL benchmark instruction for GPU node
