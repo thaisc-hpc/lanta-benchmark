@@ -4,7 +4,7 @@ changes that are of interest to vendors and administrators.
 * Changes in v0.7
 ==============================
   -- Update VASP compute testcases
-  -- Update VASP to 6.1.0
+  -- Allow VASP version 6.1.1 for compute and GPU benchmark
   -- Add VASP benchmark instruction for GPU node
   -- Update number of nodes for GPU PoC in GROMACS
   -- Add object detection benchmark instruction for GPU node
