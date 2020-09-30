@@ -99,12 +99,12 @@ The input files can be downloaded here: [lignocellulose-rf](https://sharebox.nst
 
 ## Running GROMACS
 
-1.The traditional test case is expected to perform on **4 gpu nodes**.  
+1.The traditional test case is expected to perform on **2 gpu nodes**.  
 
-To execute GROMACS `mdrun` on 4 gpu nodes (4 GPUs and 40 CPUs per node) with Slurm, the following command can be used. 
+To execute GROMACS `mdrun` on 2 gpu nodes (4 GPUs and 40 CPUs per node) with Slurm, the following command can be used. 
 
 ``` bash
-srun -N 4 --ntasks-per-node=4 --cpus-per-task=10 $HOME/gromacs/2020.3-MPI/bin/gmx_mpi mdrun -s lignocellulose-rf.tpr -maxh 0.50 -resethway -noconfout -nsteps 10000 -g logile -ntomp 10
+srun -N 2 --ntasks-per-node=4 --cpus-per-task=10 $HOME/gromacs/2020.3-MPI/bin/gmx_mpi mdrun -s lignocellulose-rf.tpr -maxh 0.50 -resethway -noconfout -nsteps 10000 -g logile -ntomp 10
 ```
 or
 
