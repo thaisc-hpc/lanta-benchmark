@@ -1,4 +1,4 @@
-System = Pt111-Surface
+System = Pt111_512-Surface
 
  Global Settings
    ISMEAR   = 1      # first order Methfessel-Paxton
