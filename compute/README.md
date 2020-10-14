@@ -12,6 +12,3 @@ The compute node benchmark consists of 4 applications as follows
 
 For detail instruction for each benchmark, see `README.md` file in each folder.
 
-## Example Performance Results 
-
-![Performance Result](example.png)
