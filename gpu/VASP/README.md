@@ -74,17 +74,6 @@ Benchmark performance =    199.298 jobs/day
 
 Here, benchmark performance of 199.298 jobs/day will be used in a benchmark report.
 
-
-## Performance 
-
-Use performance extraction script (`get_result.sh`) in each testcase's folder to obtain performance results. The script will generate `benchmark_result.txt` containing performance result. An example `benchmark_result.txt` is shown below
-
-```
-Benchmark performance =    199.298 jobs/day 
-```
-
-Here, benchmark performance of 199.298 jobs/day will be used in a benchmark report.
-
 ## Reference
 
 1. https://github.com/smaintz-nv/gpu-vasp-files/blob/master/benchmarks/B.hR105
