@@ -1,0 +1,29 @@
+System = Pt111-Surface
+
+ Global Settings
+   ISMEAR   = 1      # first order Methfessel-Paxton
+   SIGMA    = 0.1    # broadening (default)
+   LREAL    = A      # evaluate projection operators in real space
+   ENCUT    = 400
+
+ Discretization
+   PREC     = Normal # Normal defaults
+
+ Electronic Relaxation
+   ALGO   = Fast # Use Congugate Gradient to allow HF-calcs
+   NELM   = 50     # maximum number of electronic SC steps
+   NELMDL = 5 
+   EDIFF  = 0    # stopping-criterion for ELM
+
+ Ionic Relaxation
+   NSW    = 0    # maximum number of ionic steps
+   ISIF   = 0    # calculate/relax/change everything
+   IBRION = 2    # ion update algorithm (2 = CG)
+
+ Input/Output
+   ISTART = 0 # Start from scratch
+   LWAVE  = F # Don't store the WAVECAR
+   LCHARG = F # Do store the CHGCAR for band structure calculation
+
+ Tunable Paramters
+   NCORE = 1
