@@ -1,4 +1,4 @@
-# Reinforcement Learning Benchmark [Tentative]
+# Reinforcement Learning Benchmark
 
 **This benchmark might not be included in the final benchmark depended on vendor's feedback**
 
@@ -27,6 +27,20 @@ The benchmark is expected to run on **4 GPU nodes**.
 ### Running with Slurm and NVIDIA Docker
 
 Please refer to NVIDIA instruction ([README](https://github.com/mlperf/training_results_v0.7/blob/master/NVIDIA/benchmarks/minigo/implementations/tensorflow/README.md) and [`run_and_time.sh`](https://github.com/mlperf/training_results_v0.7/blob/master/NVIDIA/benchmarks/minigo/implementations/tensorflow/run_and_time.sh) ) for running benchmark with Slurm and NVIDIA docker.
+
+### Measuring Performance
+
+The performance is measured by using the walltime (`real`) from  `time` command and converts it to `jobs/day` 
+
+For example, following is the result from time command
+
+``` bash
+real	240m1.464s
+user	240m2.234s
+sys	240m2.951s
+```
+
+The performance for this benchmark is `86400 / ((240*60)+1.464)` = `6.00` jobs/day 
 
 ### Troubleshooting
 
