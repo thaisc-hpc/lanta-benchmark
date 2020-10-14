@@ -59,7 +59,7 @@ Timing will be based on `"LOOP+"` of the first ionic iteration. The result extra
 
 ## Correctness of the Benchmark
 
-Benchmark must be performed in the way that the correctness of the scientific result is maintained. In all the VASP gpu benchmarks, the single-point energy calculation is performed.  Therefore, as least, the energy differences between the sucessive self-consistent fields (SCF) iterations of the last few steps of the calculation must be less than 1E-5 eV.
+Benchmark must be performed in the way that the correctness of the scientific result is maintained. In all the VASP gpu benchmarks, the single-point energy calculation is performed.  Therefore, at least, the energy differences between the sucessive self-consistent fields (SCF) iterations of the last few steps of the calculation must be smaller than 1E-4 eV.
 
 Note that there might be some warning messages such as `num prob` and `WARNING in EDDRMM:` in the STDOUT of some benchmarks. As long as the SCF iterations are scientifically sound, these messages can be safely disregarded.
 
