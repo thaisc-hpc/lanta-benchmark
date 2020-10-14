@@ -6,7 +6,7 @@ The GPU node benchmark consists of 4 applications as follows
 | ------------- |---------:| ---------:|
 | HPL           | 4        | 1         | 
 | GROMACS       | 2        | 3         | 
-| VASP          | 2        | 2         | 
+| VASP          | 2        | 4         | 
 | Object Detection    | 4      | 1       | 
 | Reinforcement Learning    | 4      | 1       | 
 

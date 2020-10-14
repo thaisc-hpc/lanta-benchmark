@@ -1,4 +1,4 @@
-System = Pt111-Surface
+System = Pt111_512-Surface
 
  Global Settings
    ISMEAR   = 1      # first order Methfessel-Paxton
@@ -11,9 +11,9 @@ System = Pt111-Surface
 
  Electronic Relaxation
    ALGO   = Fast # Use Congugate Gradient to allow HF-calcs
-   NELM   = 30     # maximum number of electronic SC steps
+   NELM   = 35     # maximum number of electronic SC steps
    NELMDL = 5 
-   EDIFF  = 0      # stopping-criterion for ELM
+   EDIFF  = 0    # stopping-criterion for ELM
 
  Ionic Relaxation
    NSW    = 0    # maximum number of ionic steps
@@ -26,5 +26,4 @@ System = Pt111-Surface
    LCHARG = F # Do store the CHGCAR for band structure calculation
 
  Tunable Paramters
-   NCORE = 40
-   NSIM = 4
+   NCORE = 1

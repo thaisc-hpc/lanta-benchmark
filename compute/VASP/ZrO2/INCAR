@@ -9,7 +9,7 @@ PREC = Accurate
 ENCUT = 450
 NELM   = 50
 NELMDL = 5
-EDIFF  = 1E-10
+EDIFF  = 0
 NBANDS = 680
 
 #Ionic Relaxation
