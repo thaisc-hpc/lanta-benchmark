@@ -11,7 +11,7 @@ System = Pt111_512-Surface
 
  Electronic Relaxation
    ALGO   = Fast # Use Congugate Gradient to allow HF-calcs
-   NELM   = 50     # maximum number of electronic SC steps
+   NELM   = 35     # maximum number of electronic SC steps
    NELMDL = 5 
    EDIFF  = 0    # stopping-criterion for ELM
 
