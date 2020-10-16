@@ -40,7 +40,7 @@ Each of the system represent various workload/algorithm that are common among VA
 | PREC          | Normal   | Normal    | Accurate | Accurate |
 | ALGO          | Normal   | Fast      | Fast     | Normal   |
 | NELM (NELMDL) | 30 (5)   | 35 (5)    | 30 (5)   | 50 (5)   |
-| KPOINTS       | 2 2 2    | 2 2 1     | 1 1 1    | 3 3 1    |
+| KPOINTS       | 2 2 2    | 3 3 1     | 1 1 1    | 3 3 1    |
 
 
 ## Running
