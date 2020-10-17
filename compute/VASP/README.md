@@ -9,7 +9,7 @@
 * Calculation must be performed with double-precision accuracy
 * Only `vasp_std` and `vasp_gam` are allowed (when applicable)
 * The tester is responsible for their own VASP license used in the test
-* Input files (`POSCAR` and `KPOINTS`) are not allowed to change. For `INCAR`, only `NCORE` and `NSIM` can be changed.
+* Input files (`POSCAR` and `KPOINTS`) are not allowed to change. For `INCAR`, only `NCORE`, `KPAR`, `LPLANE` and `NSIM` can be changed.
 
 ## Input
 
