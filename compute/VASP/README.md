@@ -21,7 +21,7 @@ VASP benchmark consist of 4 input systems:
 - TiO2
 - ZrO2
 
-Each of the system represent various workload/algorithm that are common among VASP users. Hence, input files (`POSCAR`, `KPOINTS`) are not allowed to change. For `INCAR`, only `NCORE` and `NSIM` can be changed.
+Each of the system represent various workload/algorithm that are common among VASP users. Hence, input files (`POSCAR`, `KPOINTS`) are not allowed to change. For `INCAR`, only `NCORE`, `KPAR`, `LPLANE` and `NSIM` can be changed.
 
 ### Potentials (POTCAR)
 
