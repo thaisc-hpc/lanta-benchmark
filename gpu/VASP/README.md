@@ -11,7 +11,7 @@
 * Compiling using NVIDIA HPC SDK is recommended
 * Only `vasp_std` and `vasp_gam` are allowed (when applicable)
 * The tester is responsible for their own VASP license used in the test
-* Input files (`POSCAR`, `INCAR` and `KPOINTS`) are not allowed to change
+* Input files (`POSCAR` and `KPOINTS`) are not allowed to change. For `INCAR`, only `KPAR`, `LPLANE` and `NSIM` can be changed.
 
 ## Input
 
@@ -23,7 +23,8 @@ VASP gpu benchmark consist of 4 input systems:
 - TiO2
 - ZrO2
 
-Each of the system represent various workload/algorithm that are common among VASP users. Hence, input files (`POSCAR`, `KPOINTS`, `INCAR`) are not allowed to change.
+Each of the system represent various workload/algorithm that are common among VASP users. Hence, input files (`POSCAR`, `KPOINTS`) are not allowed to change. For `INCAR`, only `KPAR`, `LPLANE` and `NSIM` can be changed.
+
 
 ### Potentials (POTCAR)
 
