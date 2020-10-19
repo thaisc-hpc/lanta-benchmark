@@ -49,7 +49,7 @@ make install
 It is compulsory to set the `-DGMX_DOUBLE` to `off`. The other options are allowed to be changed unless there is no effect on a scientific accuracy. For CMake advanced options, please check the official installation guide.  
 **If using external libraries, all external libraries must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.**  
 
-**It is important to make sure that the GROMACS version is checked and the verified release checksum is present.**
+**It is important to ensure that the GROMACS version is checked and the verified release checksum is present.**
 
 ## Input files
 
@@ -87,9 +87,10 @@ You may consider to use the following options:
 * `-dd` and `-npme` to manually tune balance between forces and PME calculation.  
 * `-resetstep` to reset timer counters at a given step instead of using `-resethway`. However, **we required at least 10,000 steps for the performance calulation.**
 * `-ntmpi` to specify number of thread-MPI ranks 
-* `-ntomp` to specify Number of OpenMP threads per MPI rank
+* `-ntomp` to specify number of OpenMP threads per MPI rank
+* `-nstlist` to specify frequency to update the neighbor list  
 
-The adjustment of `-nstlist` that specifies frequency to update the neighbor list is allowed unless there is no loss of the accuracy.
+For advance options and performance tuning, please see official GROMACS manual.The adjustment of running options is allowed unless there is no loss of the scientific accuracy (i.e. no effect on scientific result).
 
 ## Performance 
 GROMACS `mdrun` reports its performance in nanoseconds per day (ns/day). This is printed out on the screen at the end of the simulation or listed at the end of log file.
