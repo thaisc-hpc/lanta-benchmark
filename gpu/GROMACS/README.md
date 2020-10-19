@@ -149,7 +149,7 @@ You may consider to use the following options:
 * `-ntomp` to specify number of OpenMP threads per MPI rank
 * `-nstlist` to specify frequency to update the neighbor list
 
-For advance options and performance tuning, please see official GROMACS manual.The adjustment of running options is allowed unless there is no loss of the scientific accuracy (i.e. no effect on scientific result).  
+For advanced options and performance tuning, please see official GROMACS manual.The adjustment of running options is allowed unless there is no loss of the scientific accuracy (i.e. no effect on scientific result).  
 
 ## Performance 
 GROMACS `mdrun` reports its performance in nanoseconds per day (ns/day). This is printed out on the screen at the end of the simulation or listed at the end of log file.
