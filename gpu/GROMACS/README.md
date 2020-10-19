@@ -83,11 +83,11 @@ make -j 20
 make install
 ```
 
-For both cases, it is compulsory to set the `-DGMX_DOUBLE` to `off`.  
+For both cases, it is compulsory to set the `-DGMX_DOUBLE` to `off`. The other options are allowed to be changed unless there is no effect on a scientific accuracy. For CMake advanced options, please check the official installation guide.  
 **If using external libraries, all external libraries must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.**  
-You may consider to change CMake options:  
--DCMAKE_INSTALL_PREFIX to install GROMACS in the different path  
--DGMX_SIMD to specity the level of SIMD support enabled.
+
+**It is important to ensure that the GROMACS version is checked and the verified release checksum is present.**
+
 
 ## Input files
 
@@ -104,7 +104,7 @@ The input files can be downloaded here: [lignocellulose-rf](https://sharebox.nst
 To execute GROMACS `mdrun` on 2 gpu nodes (4 GPUs and 40 CPUs per node) with Slurm, the following command can be used. 
 
 ``` bash
-srun -N 2 --ntasks-per-node=4 --cpus-per-task=10 $HOME/gromacs/2020.3-MPI/bin/gmx_mpi mdrun -s lignocellulose-rf.tpr -maxh 0.50 -resethway -noconfout -nsteps 10000 -g logile -ntomp 10
+srun -N 2 --ntasks-per-node=4 --cpus-per-task=10 $HOME/gromacs/2020.3-MPI/bin/gmx_mpi mdrun -s lignocellulose-rf.tpr -maxh 0.50 -resethway -noconfout -nsteps 20000 -g logile -ntomp 10
 ```
 or
 
@@ -122,11 +122,12 @@ export GMX_GPU_DD_COMMS=true
 export GMX_GPU_PME_PP_COMMS=true
 export GMX_FORCE_UPDATE_DEFAULT_GPU=true
 
-$HOME/gromacs/2020.3-GPU/bin/gmx mdrun -s stmv.tpr -maxh 0.50 -resethway -noconfout -nsteps 10000 -g logile -nb gpu -bonded gpu -pme gpu -ntmpi 4 -ntomp 10 -npme 1 -nstlist 80 
+$HOME/gromacs/2020.3-GPU/bin/gmx mdrun -s stmv.tpr -maxh 0.50 -noconfout -nsteps 100000 -resetstep 90000 -g logile -nb gpu -bonded gpu -pme gpu -ntmpi 4 -ntomp 10 -npme 1 -nstlist 80 
 
 ```
 
-see [NVIDIA Developer Blog](https://developer.nvidia.com/blog/creating-faster-molecular-dynamics-simulations-with-gromacs-2020/) for the explanation.
+see [NVIDIA Developer Blog](https://developer.nvidia.com/blog/creating-faster-molecular-dynamics-simulations-with-gromacs-2020/) for the explanation.  
+When running the GPU Optimization test case, please ensure that the benchmark is run using 'GPU halo exchange' feature. The PP task updates and constrains coordinates on the GPU.
 
 ### mdrun options
 
@@ -137,19 +138,18 @@ official document : http://manual.gromacs.org/documentation/current/onlinehelp/g
 |`-s`       | the input file (.tpr) (required)
 |`-g`       | output log file (required in this benchmark)
 |`-maxh`    | maximum wall itme to run job (job will terminate atfer 0.99\*this time (hours) 
-|`-nsteps`  | number of running steps (equal or greater than 10,000 steps in this benchmark)
+|`-nsteps`  | number of running steps (equal or greater than 20,000 steps in this benchmark)
 |`-resethway` | Reset timer counters at half steps. This make mdrun reports its performance based on the half of the simulation steps
 |`-noconfout` | instructs GROMACS not to write .xtc and .trr output file (coordinate and velocity) at the end of the simulation 
 
 You may consider to use the following options:
 * `-dd` and `-npme` to manually tune balance between forces and PME calculation. , you can use 
-* `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, we required at least 5,000 steps for the performance calulation.
-* `-ntmpi` to specify number of thread-MPI ranks 
-* `-ntomp` to specify Number of OpenMP threads per MPI rank
+* `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, **we required at least 10,000 steps for the performance calulation.**
+* `-ntmpi` to specify number of thread-MPI ranks. 
+* `-ntomp` to specify number of OpenMP threads per MPI rank
+* `-nstlist` to specify frequency to update the neighbor list
 
-The adjustment of `-nstlist` that specifies frequency to update the neighbor list is allowed unless there is no loss of the accuracy.
+For advance options and performance tuning, please see official GROMACS manual.The adjustment of running options is allowed unless there is no loss of the scientific accuracy (i.e. no effect on scientific result).  
 
-
-https://developer.nvidia.com/blog/creating-faster-molecular-dynamics-simulations-with-gromacs-2020/
 ## Performance 
 GROMACS `mdrun` reports its performance in nanoseconds per day (ns/day). This is printed out on the screen at the end of the simulation or listed at the end of log file.
