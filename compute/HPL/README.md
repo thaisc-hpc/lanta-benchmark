@@ -5,7 +5,7 @@
 
 ## Benchmark Rules
 
-HPL rule is based on a modified version of [HPCC rule](https://icl.utk.edu/hpcc/overview/index.html). Moreover, all HPL submissions must comply with [top500 rules](https://www.top500.org/submit/). The rule is as follows
+HPL rule is based on a modified version of [HPCC rule](https://icl.utk.edu/hpcc/overview/index.html). Moreover, all HPL submissions must comply with [top500 rules](https://www.top500.org/project/call-for-participation/). The rule is as follows
 
 ### Optimization
 
@@ -24,7 +24,7 @@ Optimizations as described below are allowed.
   * Libraries which are not generally available are not permitted. These libraries must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.
 
 * Code Modification
-  * Code modification to HPL source code are allowed as long as the modification is complied with [top500 rules](https://www.top500.org/submit/).
+  * Code modification to HPL source code are allowed as long as the modification is complied with [top500 rules](https://www.top500.org/project/call-for-participation/).
   * No changes are allowed in the DGEMM testing harness and the substituted DGEMM routine (if any) should conform to BLAS definition.
 
 ### Software Tools
@@ -193,25 +193,15 @@ Following is an example benchmark configuration for TARA compute node.
 
 | Items                                                    | Description                     |
 |----------------------------------------------------------|---------------------------------|
-| System Manufacturer                                      | Lenovo                          |
-| System Model                                             | SR650                           |
-| Operating System                                         | CentOS 7.6                      |
-| Processor Type                                           | Intel Xeon Gold 6148            |
-| Processor Speed                                          | 2.4GHz                          |
-| Cores per chip                                           | 20                              |
-| Processor per node                                       | 2                               |
-| Memory per node                                          | 192GB                           |
-| GPU                                                      | -                               |
-| GPUs per node                                            | -                               |
-| Interconnect                                             | Mellanox Infiniband EDR 100Gbps |
-| Interconnect per node                                    | 1                               |
-| Theoretical peak double-precision performance (per node) | 3.072 TFlops                    |
+| Benchmark                                                | HPL                             |
+| Testcase                                                 | -                               |
 | Compiler                                                 | GCC 8.3.0                       |
 | Compiler Flags                                           | -O3                             |
 | MPI library                                              | OpenMPI 3.1.4                   |
 | BLAS library                                             | OpenBLAS 0.3.7                  |
 | FFT library                                              | -                               |
 | Other softwares                                          | -                               |
+| Run parameters                                           | -                               |
 
 
 

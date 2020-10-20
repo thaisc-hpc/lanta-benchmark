@@ -82,6 +82,20 @@ PYTHONPATH=$REPO_PATH:$PYTHONPATH time singularity exec --nv \
 ```
 Note that `EXTRA_PARAMS` and `EXTRA_CONFIG` is set by `config_DGX1.sh`.
 
+### Measuring Performance
+
+The performance is measured by using the walltime (`real`) from  `time` command and converts it to `jobs/day` 
+
+For example, following is the result from time command
+
+``` bash
+real	240m1.464s
+user	240m2.234s
+sys	240m2.951s
+```
+
+The performance for this benchmark is `86400 / ((240*60)+1.464)` = `6.00` jobs/day 
+
 ### Troubleshooting
 
 #### Missing `mlperf-logging` 
