@@ -10,7 +10,7 @@ Official document : http://manual.gromacs.org/documentation/
 
 ## Installation
 
-Installation guide : http://manual.gromacs.org/documentation/current/install-guide/index.html  
+Official installation guide : http://manual.gromacs.org/documentation/current/install-guide/index.html  
 Source code : http://manual.gromacs.org/documentation/2020.3/download.html
 
 ### Example
@@ -46,11 +46,10 @@ make -j 20
 make install
 ```
 
-It is compulsory to set the `-DGMX_DOUBLE` to `off`.  
+It is compulsory to set the `-DGMX_DOUBLE` to `off`. The other options are allowed to be changed unless there is no effect on a scientific accuracy. For CMake advanced options, please check the official installation guide.  
 **If using external libraries, all external libraries must be available to and usable by ThaiSC and its users without any restrictions when the system is deployed.**  
-You may consider to change CMake options:  
--DCMAKE_INSTALL_PREFIX to install GROMACS in the different path  
--DGMX_SIMD to specity the level of SIMD support enabled.
+
+**It is important to ensure that the GROMACS version is checked and the verified release checksum is present.**
 
 ## Input files
 
@@ -80,17 +79,18 @@ official document : http://manual.gromacs.org/documentation/current/onlinehelp/g
 |`-s`       | the input file (.tpr) (required)
 |`-g`       | output log file (required in this benchmark)
 |`-maxh`    | maximum wall itme to run job (job will terminate atfer 0.99\*this time (hours) 
-|`-nsteps`  | number of running steps (equal or greater than 10,000 steps in this benchmark)
+|`-nsteps`  | number of running steps (equal or greater than 20,000 steps in this benchmark)
 |`-resethway` | Reset timer counters at half steps. This make mdrun reports its performance based on the half of the simulation steps
 |`-noconfout` | instructs GROMACS not to write .xtc and .trr output file (coordinate and velocity) at the end of the simulation 
 
 You may consider to use the following options:
-* `-dd` and `-npme` to manually tune balance between forces and PME calculation. , you can use 
-* `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, we required at least 5,000 steps for the performance calulation.
+* `-dd` and `-npme` to manually tune balance between forces and PME calculation.  
+* `-resetstep` to reset timer counters at a given step instead of using `-resethway`. However, **we required at least 10,000 steps for the performance calulation.**
 * `-ntmpi` to specify number of thread-MPI ranks 
-* `-ntomp` to specify Number of OpenMP threads per MPI rank
+* `-ntomp` to specify number of OpenMP threads per MPI rank
+* `-nstlist` to specify frequency to update the neighbor list  
 
-The adjustment of `-nstlist` that specifies frequency to update the neighbor list is allowed unless there is no loss of the accuracy.
+For advanced options and performance tuning, please see official GROMACS manual.The adjustment of running options is allowed unless there is no loss of the scientific accuracy (i.e. no effect on scientific result).
 
 ## Performance 
 GROMACS `mdrun` reports its performance in nanoseconds per day (ns/day). This is printed out on the screen at the end of the simulation or listed at the end of log file.

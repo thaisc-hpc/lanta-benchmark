@@ -33,7 +33,7 @@ The sequnce was genereated using https://www.bioinformatics.org/sms2/random_dna.
 
 MAFFT benchmark runs on a single compute node **without MPI**. You can follow the information in https://mafft.cbrc.jp/alignment/software/manual/manual.html  
 
-The MAFFT must run with `--globalpair` which specifies Needleman-Wunsch algorithm. Only `--thread`, `--threadtb`, and `--threadit` options are allowed to change.  
+The MAFFT must run with `--globalpair` which specifies Needleman-Wunsch algorithm. Only `--thread`, `--threadtb`, and `--threadit` options are allowed to be changed.  
 
 The information about MAFFT multithreads is available at https://mafft.cbrc.jp/alignment/software/multithreading.html .
 
