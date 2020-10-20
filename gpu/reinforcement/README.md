@@ -1,7 +1,5 @@
 # Reinforcement Learning Benchmark
 
-**This benchmark might not be included in the final benchmark depended on vendor's feedback**
-
 **Website**: https://mlperf.org/  
 **Version**: v0.7  
 **Reference Implementation**: https://github.com/mlperf/training_results_v0.7/tree/master/NVIDIA/benchmarks/minigo/implementations/tensorflow
