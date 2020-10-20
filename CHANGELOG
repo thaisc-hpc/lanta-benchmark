@@ -1,6 +1,14 @@
 This file describes changes in Lanta Benchmark. It primarily documents those 
 changes that are of interest to vendors and administrators.
 
+* Changes in v0.9
+==============================
+  -- Add 2 VASP GPU testcases
+  -- Update VASP 
+  -- Update GROMACS instruction
+  -- Update performance measurement for object detection GPU benchmark
+  -- Update reinforcement learning GPU benchmark
+
 * Changes in v0.8
 ==============================
   -- Update VASP compute testcases
