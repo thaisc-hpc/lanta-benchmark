@@ -84,17 +84,30 @@ Note that `EXTRA_PARAMS` and `EXTRA_CONFIG` is set by `config_DGX1.sh`.
 
 ### Measuring Performance
 
-The performance is measured by using the walltime (`real`) from  `time` command and converts it to `jobs/day` 
+The performance measurement method follows [MLPerf instruction](https://github.com/mlperf/training_policies/blob/master/training_rules.adoc#run-results). The performance result is based on a set of run results. For object detection, **the number of runs is 5**. Note that, text files containing output from each run (one file per run) must be submitted with the results. See. [NVIDIA results]( https://github.com/mlperf/training_results_v0.7/tree/master/NVIDIA/results/dgx1_ngc20.06_pytorch/maskrcnn) for example submission.   
 
-For example, following is the result from time command
+The execution time of each run is taken from [`run_and_time.sh`](https://github.com/mlperf/training_results_v0.7/blob/master/NVIDIA/benchmarks/maskrcnn/implementations/pytorch/run_and_time.sh) script from the line beginning with `RESULT,OBJECT_DETECTION,,`.   
 
-``` bash
-real	240m1.464s
-user	240m2.234s
-sys	240m2.951s
+Following is an example output one run of object detection benchmark
+
+```bash
+...
+...
+&&&& MLPERF METRIC TIME= 9245.228166103363
+:::MLLOG {"namespace": "", "time_ms": 1592795866481, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "tools/train_mlperf.py", "lineno": 360, "status": "success"}}
+&&&& MLPERF METRIC TIME= 9246.23716545105
+RESULT,OBJECT_DETECTION,,9252,nvidia,2020-06-21 05:43:38 PM
+ENDING TIMING RUN AT 2020-06-21 08:17:50 PM
+RESULT,OBJECT_DETECTION,,9252,nvidia,2020-06-21 05:43:38 PM
+ENDING TIMING RUN AT 2020-06-21 08:17:51 PM
+RESULT,OBJECT_DETECTION,,9253,nvidia,2020-06-21 05:43:38 PM
 ```
 
-The performance for this benchmark is `86400 / ((240*60)+1.464)` = `6.00` jobs/day 
+For this example, the execution time of this run is 9,253 seconds. 
+
+The performance result is computed by dropping the fastest and slowest runs, then taking the mean of the remaining times. For this purpose, a single non-converging run may be treated as the slowest run and dropped. A benchmark result is invalid if there is more than one non-converging run.
+
+The final mean execution time will be convert to `jobs/day`, which will be used for computing quality score. 
 
 ### Troubleshooting
 
