@@ -4,8 +4,8 @@ Benchmark version : 2020.3
 Official document : http://manual.gromacs.org/documentation/
 
 In this GPU benchmark, we will consider GROMACS performance in 2 different situations. 
-1. Mixing CPUs and GPUs (traditional run) 
-2. GPU Optimization 
+1. Traditional case (GROMACS) 
+2. GPU Optimization (GROMACS-OPT)
 
 ## Benchmark rules
 
@@ -21,7 +21,7 @@ Source code : http://manual.gromacs.org/documentation/2020.3/download.html
 
 #### Download and Install GROMACS
 
-1. Mixing CPUs and GPUs (traditional case)
+1. Traditional case (GROMACS)
 
 ``` bash
 wget ftp://ftp.gromacs.org/pub/gromacs/gromacs-2020.3.tar.gz
@@ -52,7 +52,7 @@ make -j 20
 make install
 ```
 
-2. GPU Optimization
+2. GPU Optimization (GROMACS-OPT)
 
 ``` bash
 wget ftp://ftp.gromacs.org/pub/gromacs/gromacs-2020.3.tar.gz
@@ -62,7 +62,7 @@ mkdir build
 cd build
 
 cmake \
-        -DCMAKE_INSTALL_PREFIX=$HOME/gromacs/2020.3-GPU \
+        -DCMAKE_INSTALL_PREFIX=$HOME/gromacs/2020.3-OPT \
         -DBUILD_SHARED_LIBS=off \
         -DBUILD_TESTING=off \
         -DREGRESSIONTEST_DOWNLOAD=OFF \
@@ -91,9 +91,9 @@ For both cases, it is compulsory to set the `-DGMX_DOUBLE` to `off`. The other o
 
 ## Input files
 
-In the traditional case, we use the Satellite tobacco mosaic virus (STMV) system and the test case-B (lignocellulose-rf) from [UEABS benhmark](https://repository.prace-ri.eu/git/UEABS/ueabs/-/tree/master/).   
+In the traditional case (GROMACS), we use the Satellite tobacco mosaic virus (STMV) system and the test case-B (lignocellulose-rf) from [UEABS benhmark](https://repository.prace-ri.eu/git/UEABS/ueabs/-/tree/master/).   
 
-In the GPU Optimization case, we only use the STMV system.  
+In the GPU Optimization case (GROMACS-OPT), we only use the STMV system.  
 
 The input files can be downloaded here: [lignocellulose-rf](https://sharebox.nstda.or.th/d/d94385bd) and [stmv](https://sharebox.nstda.or.th/d/b16a7e96).  
 
@@ -122,12 +122,12 @@ export GMX_GPU_DD_COMMS=true
 export GMX_GPU_PME_PP_COMMS=true
 export GMX_FORCE_UPDATE_DEFAULT_GPU=true
 
-$HOME/gromacs/2020.3-GPU/bin/gmx mdrun -s stmv.tpr -maxh 0.50 -noconfout -nsteps 100000 -resetstep 90000 -g logile -nb gpu -bonded gpu -pme gpu -ntmpi 4 -ntomp 10 -npme 1 -nstlist 80 
+$HOME/gromacs/2020.3-OPT/bin/gmx mdrun -s stmv.tpr -maxh 0.50 -noconfout -nsteps 100000 -resetstep 90000 -g logile -nb gpu -bonded gpu -pme gpu -ntmpi 4 -ntomp 10 -npme 1 -nstlist 80 
 
 ```
 
 see [NVIDIA Developer Blog](https://developer.nvidia.com/blog/creating-faster-molecular-dynamics-simulations-with-gromacs-2020/) for the explanation.  
-When running the GPU Optimization test case, please ensure that the benchmark is run using 'GPU halo exchange' feature. The PP task updates and constrains coordinates on the GPU.
+When running the GPU Optimization test case, it is important to ensure that the benchmark is run using 'GPU halo exchange' feature. The PP task updates and constrains coordinates on the GPU.
 
 ### mdrun options
 
