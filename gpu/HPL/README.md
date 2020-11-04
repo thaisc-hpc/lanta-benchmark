@@ -157,7 +157,6 @@ Performance result is reported in the `Gflops` column of `HPL.out` file. We only
 HPL benchmark submission includes following files
 
 * Benchmark configuration. (See. [Benchmark Configuration](#Benchmark-Configuration-Example) )
-* HPL binary
 * A document describing all optiomizations and code modification.
 * HPL input file `HPL.dat`
 * HPL-generated output file `HPL.out`
