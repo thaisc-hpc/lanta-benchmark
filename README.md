@@ -2,9 +2,6 @@
 
 Lanta Benchmark Suite is a set of applications for measuring performance of a HPC cluster. These set of applications represent workload for ThaiSC users. Lanta Benchmark Suite is expected to be used in part for performance evaluation of the new Lanta cluster.
 
-**Disclaimer: This is not the final release version of the Lanta Benchmark Suite. Some of the content may change** 
-
-
 ## Computing System on Lanta:
 
 **Compute Node**: Dual-socket x86 server  
