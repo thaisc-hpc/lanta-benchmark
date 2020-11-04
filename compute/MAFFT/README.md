@@ -22,7 +22,7 @@ make
 make install
 ```
 
-You may consider to change the CC and CFLAGS in the Makefile(s).
+You may consider to change the CC and CFLAGS in the Makefile.
 
 ## Input
 
