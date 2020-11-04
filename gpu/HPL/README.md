@@ -42,7 +42,7 @@ Input file `HPL.dat` can be edited for the target system.
 
 ## Running HPL
 
-HPL benchmark is expected to run on **4 GPU nodes**, each is configured with 4 NVIDIA A100 GPUs. An input file for HPL is `HPL.dat`. The explanation of each configuration can be read from `README.txt`. Following is an example input file.
+HPL benchmark is expected to run on **4 GPU nodes**, each is configured with 4 NVIDIA A100 GPUs. An input file for HPL is `HPL.dat`. The explanation of each configuration can be read from `README`. Following is an example input file.
 
 ```bash
 HPLinpack benchmark input file
