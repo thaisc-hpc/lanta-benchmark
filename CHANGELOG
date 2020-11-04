@@ -1,6 +1,10 @@
 This file describes changes in Lanta Benchmark. It primarily documents those 
 changes that are of interest to vendors and administrators.
 
+* Changes in v1.0
+==============================
+  -- Minor fixes
+
 * Changes in v0.9
 ==============================
   -- Add 2 VASP GPU testcases
