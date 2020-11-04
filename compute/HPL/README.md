@@ -55,7 +55,7 @@ This directory contains instructions (the files `README` and `INSTALL`) on how t
 
 ## Running HPL
 
-HPL benchmark is expected to run on **8 compute nodes**. An input file for HPL is `HPL.dat`. The explanation of each configuration can be read from `README.txt`. Following is an example input file.
+HPL benchmark is expected to run on **8 compute nodes**. An input file for HPL is `HPL.dat`. The explanation of each configuration can be read from `README`. Following is an example input file.
 
 ```bash
 HPLinpack benchmark input file
