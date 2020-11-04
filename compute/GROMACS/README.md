@@ -78,7 +78,7 @@ official document : http://manual.gromacs.org/documentation/current/onlinehelp/g
 |:--      |:--|
 |`-s`       | the input file (.tpr) (required)
 |`-g`       | output log file (required in this benchmark)
-|`-maxh`    | maximum wall itme to run job (job will terminate atfer 0.99\*this time (hours) 
+|`-maxh`    | maximum wall itme to run job (job will terminate atfer 0.99\*this time (hours)) 
 |`-nsteps`  | number of running steps (equal or greater than 20,000 steps in this benchmark)
 |`-resethway` | Reset timer counters at half steps. This make mdrun reports its performance based on the half of the simulation steps
 |`-noconfout` | instructs GROMACS not to write .xtc and .trr output file (coordinate and velocity) at the end of the simulation 
