@@ -1,6 +1,10 @@
 This file describes changes in Lanta Benchmark. It primarily documents those 
 changes that are of interest to vendors and administrators.
 
+* Changes in v1.1
+==============================
+  -- Update GROMACS version
+
 * Changes in v1.0
 ==============================
   -- Minor fixes
