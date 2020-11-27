@@ -1,17 +1,17 @@
 # GROMACS Benchmark 
 
-Benchmark version : 2020.3  
+Benchmark version : 2020.3 or 2020.4  
 Official document : http://manual.gromacs.org/documentation/
 
 ## Benchmark rules
 
-* GROMACS version 2020.3 **only**
+* GROMACS version 2020.3 or 2020.4   
 * No code modification is allowed
 
 ## Installation
 
 Official installation guide : http://manual.gromacs.org/documentation/current/install-guide/index.html  
-Source code : http://manual.gromacs.org/documentation/2020.3/download.html
+Source code : http://manual.gromacs.org/documentation/
 
 ### Example
 
@@ -72,7 +72,7 @@ or
 
 ### mdrun options
 
-official document : http://manual.gromacs.org/documentation/current/onlinehelp/gmx-mdrun.html  
+Official document : http://manual.gromacs.org/documentation/current/onlinehelp/gmx-mdrun.html  
 
 | options | description |
 |:--      |:--|
@@ -85,7 +85,7 @@ official document : http://manual.gromacs.org/documentation/current/onlinehelp/g
 
 You may consider to use the following options:
 * `-dd` and `-npme` to manually tune balance between forces and PME calculation.  
-* `-resetstep` to reset timer counters at a given step instead of using `-resethway`. However, **we required at least 10,000 steps for the performance calulation.**
+* `-resetstep` to reset timer counters at a given step instead of using `-resethway`. However, **we require at least 10,000 steps for the performance calulation.**
 * `-ntmpi` to specify number of thread-MPI ranks 
 * `-ntomp` to specify number of OpenMP threads per MPI rank
 * `-nstlist` to specify frequency to update the neighbor list  

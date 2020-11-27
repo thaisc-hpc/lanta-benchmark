@@ -1,6 +1,6 @@
 # GROMACS GPU Benchmark 
 
-Benchmark version : 2020.3  
+Benchmark version : 2020.3 or 2020.4   
 Official document : http://manual.gromacs.org/documentation/
 
 In this GPU benchmark, we will consider GROMACS performance in 2 different situations. 
@@ -9,13 +9,13 @@ In this GPU benchmark, we will consider GROMACS performance in 2 different situa
 
 ## Benchmark rules
 
-* GROMACS version 2020.3 **only**
+* GROMACS version 2020.3 or 2020.4   
 * No code modification is allowed
 
 ## Installation
 
 Installation guide : http://manual.gromacs.org/documentation/current/install-guide/index.html  
-Source code : http://manual.gromacs.org/documentation/2020.3/download.html
+Source code : http://manual.gromacs.org/documentation/
 
 ### Example
 
@@ -143,8 +143,8 @@ official document : http://manual.gromacs.org/documentation/current/onlinehelp/g
 |`-noconfout` | instructs GROMACS not to write .xtc and .trr output file (coordinate and velocity) at the end of the simulation 
 
 You may consider to use the following options:
-* `-dd` and `-npme` to manually tune balance between forces and PME calculation. , you can use 
-* `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, **we required at least 10,000 steps for the performance calulation.**
+* `-dd` and `-npme` to manually tune balance between forces and PME calculation.  
+* `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, **we require at least 10,000 steps for the performance calulation.**
 * `-ntmpi` to specify number of thread-MPI ranks. 
 * `-ntomp` to specify number of OpenMP threads per MPI rank
 * `-nstlist` to specify frequency to update the neighbor list
