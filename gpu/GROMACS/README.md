@@ -1,6 +1,6 @@
 # GROMACS GPU Benchmark 
 
-Benchmark version : 2020.3  
+Benchmark version : 2020.3 or 2020.4   
 Official document : http://manual.gromacs.org/documentation/
 
 In this GPU benchmark, we will consider GROMACS performance in 2 different situations. 
@@ -9,13 +9,13 @@ In this GPU benchmark, we will consider GROMACS performance in 2 different situa
 
 ## Benchmark rules
 
-* GROMACS version 2020.3 **only**
+* GROMACS version 2020.3 or 2020.4   
 * No code modification is allowed
 
 ## Installation
 
 Installation guide : http://manual.gromacs.org/documentation/current/install-guide/index.html  
-Source code : http://manual.gromacs.org/documentation/2020.3/download.html
+Source code : http://manual.gromacs.org/documentation/
 
 ### Example
 
