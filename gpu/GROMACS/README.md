@@ -144,7 +144,7 @@ official document : http://manual.gromacs.org/documentation/current/onlinehelp/g
 
 You may consider to use the following options:
 * `-dd` and `-npme` to manually tune balance between forces and PME calculation.  
-* `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, **we required at least 10,000 steps for the performance calulation.**
+* `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, **we require at least 10,000 steps for the performance calulation.**
 * `-ntmpi` to specify number of thread-MPI ranks. 
 * `-ntomp` to specify number of OpenMP threads per MPI rank
 * `-nstlist` to specify frequency to update the neighbor list
