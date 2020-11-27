@@ -143,7 +143,7 @@ official document : http://manual.gromacs.org/documentation/current/onlinehelp/g
 |`-noconfout` | instructs GROMACS not to write .xtc and .trr output file (coordinate and velocity) at the end of the simulation 
 
 You may consider to use the following options:
-* `-dd` and `-npme` to manually tune balance between forces and PME calculation. , you can use 
+* `-dd` and `-npme` to manually tune balance between forces and PME calculation.  
 * `-resetstep` to reset timer counters at a given step, instead of using `-resethway`. However, **we required at least 10,000 steps for the performance calulation.**
 * `-ntmpi` to specify number of thread-MPI ranks. 
 * `-ntomp` to specify number of OpenMP threads per MPI rank
